@@ -12,7 +12,7 @@
 #include "TLegend.h"  
 #include "THStack.h"
 #include "TPaveStats.h"
-//>:C
+
 ////////TMVA libraries//////////
 #include "TMVA/Tools.h"
 #include "TMVA/Factory.h"
@@ -27,7 +27,7 @@ TFile *f_out = new TFile("continuum_BDT.root","RECREATE");
 TMVA::Factory *factory = new TMVA::Factory("continuum_BDT", f_out,"!V:Color=True:DrawProgressBar=True");
 
 ///////////Upload the data to train and test the BDT///////////////////////////
-TFile *f_sig = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
+TFile *f_sig = new TFile("MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
 
 TFile *f_bkg_charm0 = new TFile("MC_data/rootfiles/bkg_charm_0.root");
 TFile *f_bkg_charm1 = new TFile("MC_data/rootfiles/bkg_charm_1.root");
@@ -37,12 +37,12 @@ TFile *f_bkg_charm4 = new TFile("MC_data/rootfiles/bkg_charm_4.root");
 TFile *f_bkg_charm5 = new TFile("MC_data/rootfiles/bkg_charm_5.root");
 
 
-TFile *f_bkg_uds0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_0.root");
-TFile *f_bkg_uds1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_1.root");
-TFile *f_bkg_uds2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_2.root");
-TFile *f_bkg_uds3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_3.root");
-TFile *f_bkg_uds4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_4.root");
-TFile *f_bkg_uds5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_5.root");
+TFile *f_bkg_uds0 = new TFile("MC_data/rootfiles/bkg_uds_0.root");
+TFile *f_bkg_uds1 = new TFile("MC_data/rootfiles/bkg_uds_1.root");
+TFile *f_bkg_uds2 = new TFile("MC_data/rootfiles/bkg_uds_2.root");
+TFile *f_bkg_uds3 = new TFile("MC_data/rootfiles/bkg_uds_3.root");
+TFile *f_bkg_uds4 = new TFile("MC_data/rootfiles/bkg_uds_4.root");
+TFile *f_bkg_uds5 = new TFile("MC_data/rootfiles/bkg_uds_5.root");
 
 
 TTree *t_sig = (TTree*)f_sig->Get("incl");
@@ -124,12 +124,6 @@ TCut sig_cut = "isSignalAcceptMissingNeutrino_Bsig==1";
 Int_t ntrain_sig = round((t_sig->GetEntries(cut +out_layers + sig_cut))*0.833333); Int_t ntest_sig = round((t_sig->GetEntries(cut +out_layers + sig_cut))*0.166667);
 
 
-// use TMVA::maeff to compute the figure of merit too
-
-// estimate the efficiency of the signal after the bdt cut (DONE)
-// apply the other cut (DONE)
-// remove the correlated variable (DONE)
-// fix the split between train and test (DONE)
 TString options_split =Form("nTrain_Signal=%d:nTest_Signal=%d::SplitMode=Random",ntrain_sig,ntest_sig);
 dataloader_continuum->PrepareTrainingAndTestTree(cut +out_layers + sig_cut, cut +out_layers ,options_split);
 
