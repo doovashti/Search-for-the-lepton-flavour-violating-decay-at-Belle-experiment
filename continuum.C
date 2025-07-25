@@ -130,7 +130,7 @@ dataloader_continuum->PrepareTrainingAndTestTree(cut +out_layers + sig_cut, cut 
 /////////////////////////////BOOKING METHODS/////////////////////////////////
 // Boosted Decision Trees with adaptive boosting
 
-factory->BookMethod(dataloader_continuum, TMVA::Types::kBDT, "BDTA1", "!H:!V:NTrees=400:MinNodeSize=4%:\
+factory->BookMethod(dataloader_continuum, TMVA::Types::kBDT, "BDT_continuum", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////
