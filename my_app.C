@@ -114,7 +114,7 @@ reader_s->AddVariable("thrust_Bm", &s_uservar29);
 //reader_s->AddVariable("thrust_Om", &s_uservar30);
 
 /////////////////////Selecting the method for the prediction/////////////////////////
-reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDTA1.weights.xml");
+reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDT_continuum.weights.xml");
  
 ////////////////////////Computing BDT for each Entry/////////////////////////////
 int nEnt_s = Data_s->GetEntries();
@@ -261,7 +261,7 @@ for (int i=0; i<6;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDTA1.weights.xml");
+     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDT_continuum.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -409,7 +409,7 @@ for (int i=0; i<6;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDTA1.weights.xml");
+     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDT_continuum.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -557,7 +557,7 @@ for (int i=0; i<10;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDTA1.weights.xml");
+     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDT_continuum.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -705,7 +705,7 @@ for (int i=0; i<10;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDTA1.weights.xml");
+     reader_s->BookMVA("BDT", "continuum/weights/continuum_BDT_BDT_continuum.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
