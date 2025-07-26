@@ -11,6 +11,9 @@
         "my_app3.C": "cpp",
         "punzi copy.C": "cpp",
         "punzi 2.C": "cpp",
-        "punzi2.C": "cpp"
+        "punzi2.C": "cpp",
+        "bdt_scores.C": "cpp",
+        "bdf_scores.C": "cpp",
+        "new": "cpp"
     }
 }
