@@ -22,6 +22,13 @@
 #include "TChain.h"
 
 void statistics(){
+Float_t int_luminosity = 711; //fb^-1
+Float_t f_charged = 1-0.486; // fraction of the upsilon decaying into b⁺b⁻
+Float_t bbar_cs = 1.1e06; //fb
+Float_t nBBbar = 2 * int_luminosity * bbar_cs * f_charged; // computing the number of B⁺B⁻
+Float_t br_BtoKTauMu = 5e-5;  //Branching ratio of the LVF process??
+Float_t br_TautoRho = 0.228; //Branching ratio retrived from Inspired
+Float_t sigtheory = round(nBBbar * br_BtoKTauMu * br_TautoRho); // actual signal events expected at belle
 
 TFile *f_sig_original = new TFile("MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
 TTree *t_sig_original = (TTree*)f_sig_original->Get("incl");
@@ -32,7 +39,7 @@ TCut obv_bkg = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.
 Float_t original_signal = t_sig_original->GetEntries(); 
 
 ///////////////////////////continuum BDT////////////////////
-TChain c_bkg_continuum = new TChain("incl");
+TChain *c_bkg_continuum = new TChain("incl");
 
 TFile *f_sig_continuum = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
 
@@ -92,7 +99,7 @@ std::cout << continuum_eff_bkg << std::endl;
 
 
 ///////////////////////////////////////ALL CUTS//////////////////////////
-TChain c_bkg_all_cuts = new TChain("incl");
+TChain *c_bkg_all_cuts = new TChain("incl");
 
 TFile *f_sig_all_cuts = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
 
@@ -138,20 +145,22 @@ c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
 TCut bdt_continuum = "bdt_continuum > 0.038";
 TCut bdt_bbar = "bdt_bbar > 0.013";
 
-TTree t_sig_all_cuts = (TTree*)f_sig_all_cuts->Get("incl");
+TTree *t_sig_all_cuts = (TTree*)f_sig_all_cuts->Get("incl");
 
 Float_t signal_all_cuts = t_sig_all_cuts->GetEntries(obv_bkg && bdt_continuum && bdt_bbar); 
 Float_t bkg_all_cuts = c_bkg_all_cuts->GetEntries(obv_bkg && bdt_continuum && bdt_bbar); 
 Float_t original_all_cuts_bkg = c_bkg_all_cuts->GetEntries(); 
 
-Float_t continuum_eff_signal = signal_all_cuts/original_signal;
-Float_t continuum_eff_bkg = bkg_all_cuts/original_all_cuts_bkg;
+Float_t all_cuts_eff_signal = signal_all_cuts/original_signal;
+Float_t all_cuts_eff_bkg = bkg_all_cuts/original_all_cuts_bkg;
 
-std::cout <<"The relative signal efficiency after all the cuts and the original signal events is: " << continuum_eff_signal << std::endl;
-std::cout << "The relative background efficiency after all the cuts and the original background events is: " << continuum_eff_bkg << std::endl;
+std::cout <<"The relative signal efficiency after all the cuts and the original signal events is: " << all_cuts_eff_signal << std::endl;
+std::cout << "The relative background efficiency after all the cuts and the original background events is: " << all_cuts_eff_bkg << std::endl;
 
-std::cout << "The remaining number of signal events is: "<< singal_all_cuts << std::endl;
-std::cout << "The remaining number of background events is " << continuum_eff_bkg << std::endl;
+std::cout << "The remaining number of signal events is: "<< signal_all_cuts << std::endl;
+std::cout << "The remaining number of background events is " << bkg_all_cuts << std::endl;
+
+std::cout << "The expected number of true signal events observed at belle is: " << all_cuts_eff_signal*sigtheory <<std::endl;
 
 
 }
