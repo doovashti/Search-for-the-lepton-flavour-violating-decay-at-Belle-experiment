@@ -19,6 +19,7 @@
 #include "TMVA/DataLoader.h"
 #include "TMVA/Types.h"
 #include "TMVA/Reader.h"
+#include "TChain.h"
 
 void statistics(){
 
