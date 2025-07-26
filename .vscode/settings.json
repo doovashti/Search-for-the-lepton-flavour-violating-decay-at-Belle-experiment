@@ -6,6 +6,8 @@
         "bbar.C": "cpp",
         "my_app2.C": "cpp",
         "statistics.C": "cpp",
-        "continuum_BDT_BDT_continuum.class.C": "cpp"
+        "continuum_BDT_BDT_continuum.class.C": "cpp",
+        "my_app2 copy.C": "cpp",
+        "my_app3.C": "cpp"
     }
 }
