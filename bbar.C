@@ -27,7 +27,7 @@ TFile *f_out = new TFile("bbar_BDT.root","RECREATE");
 TMVA::Factory *factory = new TMVA::Factory("bbar_BDT", f_out,"!V:Color=True:DrawProgressBar=True");
 
 ///////////Upload the data to train and test the BDT///////////////////////////
-TFile *f_sig = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
+TFile *f_sig = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
 
 TFile *f_bkg_charged0 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_0.root");
 TFile *f_bkg_charged1 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_1.root");
