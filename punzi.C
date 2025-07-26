@@ -35,24 +35,24 @@ double punji_fom(float eff, float nb, float wb){
 void punzi(){
 
 /////////////////// Upload the MC samples///////////////////////////////
-TFile *f_sig = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
+TFile *f_sig = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
 
 TChain *c_bkg_charm = new TChain("incl");
 TChain *c_bkg_uds = new TChain("incl");
 
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_0.root");
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_1.root");
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_2.root");
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_3.root");
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_4.root");
-c_bkg_charm->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charm_5.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_0.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_1.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_2.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_3.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_4.root");
+c_bkg_charm->Add("MC_data/bdt_continuum/bdt_bkg_charm_5.root");
 
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_0.root");
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_1.root");
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_2.root");
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_3.root");
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_4.root");
-c_bkg_uds->Add("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_uds_5.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_0.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_1.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_2.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_3.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_4.root");
+c_bkg_uds->Add("MC_data/bdt_continuum/bdt_bkg_uds_5.root");
 
 
 TTree *t_sig = (TTree*)f_sig->Get("incl");
