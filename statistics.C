@@ -87,4 +87,71 @@ Float_t continuum_eff_bkg = continuum_bkg/original_continuum_bkg;
 
 std::cout << continuum_eff_signal << std::endl;
 std::cout << continuum_eff_bkg << std::endl;
+
+
+
+
+///////////////////////////////////////ALL CUTS//////////////////////////
+TChain c_bkg_all_cuts = new TChain("incl");
+
+TFile *f_sig_all_cuts = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
+
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
+
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
+
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
+
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
+c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
+
+
+//////////////cuts for the bdt scores 
+
+TCut bdt_continuum = "bdt_continuum > 0.038";
+TCut bdt_bbar = "bdt_bbar > 0.013";
+
+TTree t_sig_all_cuts = (TTree*)f_sig_all_cuts->Get("incl");
+
+Float_t signal_all_cuts = t_sig_all_cuts->GetEntries(obv_bkg && bdt_continuum && bdt_bbar); 
+Float_t bkg_all_cuts = c_bkg_all_cuts->GetEntries(obv_bkg && bdt_continuum && bdt_bbar); 
+Float_t original_all_cuts_bkg = c_bkg_all_cuts->GetEntries(); 
+
+Float_t continuum_eff_signal = signal_all_cuts/original_signal;
+Float_t continuum_eff_bkg = bkg_all_cuts/original_all_cuts_bkg;
+
+std::cout <<"The relative signal efficiency after all the cuts and the original signal events is: " << continuum_eff_signal << std::endl;
+std::cout << "The relative background efficiency after all the cuts and the original background events is: " << continuum_eff_bkg << std::endl;
+
+std::cout << "The remaining number of signal events is: "<< singal_all_cuts << std::endl;
+std::cout << "The remaining number of background events is " << continuum_eff_bkg << std::endl;
+
+
 }
