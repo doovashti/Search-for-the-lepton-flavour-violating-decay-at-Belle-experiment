@@ -29,27 +29,27 @@ TMVA::Factory *factory = new TMVA::Factory("bbar_BDT", f_out,"!V:Color=True:Draw
 ///////////Upload the data to train and test the BDT///////////////////////////
 TFile *f_sig = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
 
-TFile *f_bkg_charged0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_0.root");
-TFile *f_bkg_charged1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_1.root");
-TFile *f_bkg_charged2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_2.root");
-TFile *f_bkg_charged3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_3.root");
-TFile *f_bkg_charged4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_4.root");
-TFile *f_bkg_charged5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_5.root");
-TFile *f_bkg_charged6 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_6.root");
-TFile *f_bkg_charged7 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_7.root");
-TFile *f_bkg_charged8 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_8.root");
-TFile *f_bkg_charged9 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_charged_9.root");
+TFile *f_bkg_charged0 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_0.root");
+TFile *f_bkg_charged1 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_1.root");
+TFile *f_bkg_charged2 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_2.root");
+TFile *f_bkg_charged3 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_3.root");
+TFile *f_bkg_charged4 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_4.root");
+TFile *f_bkg_charged5 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_5.root");
+TFile *f_bkg_charged6 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_6.root");
+TFile *f_bkg_charged7 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_7.root");
+TFile *f_bkg_charged8 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_8.root");
+TFile *f_bkg_charged9 = new TFile("MC_data/bdt_continuum/bdt_bkg_charged_9.root");
 
-TFile *f_bkg_mixed0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_0.root");
-TFile *f_bkg_mixed1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_1.root");
-TFile *f_bkg_mixed2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_2.root");
-TFile *f_bkg_mixed3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_3.root");
-TFile *f_bkg_mixed4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_4.root");
-TFile *f_bkg_mixed5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_5.root");
-TFile *f_bkg_mixed6 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_6.root");
-TFile *f_bkg_mixed7 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_7.root");
-TFile *f_bkg_mixed8 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_8.root");
-TFile *f_bkg_mixed9 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_continuum/bdt_bkg_mixed_9.root");
+TFile *f_bkg_mixed0 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_0.root");
+TFile *f_bkg_mixed1 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_1.root");
+TFile *f_bkg_mixed2 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_2.root");
+TFile *f_bkg_mixed3 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_3.root");
+TFile *f_bkg_mixed4 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_4.root");
+TFile *f_bkg_mixed5 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_5.root");
+TFile *f_bkg_mixed6 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_6.root");
+TFile *f_bkg_mixed7 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_7.root");
+TFile *f_bkg_mixed8 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_8.root");
+TFile *f_bkg_mixed9 = new TFile("MC_data/bdt_continuum/bdt_bkg_mixed_9.root");
 
 
 TTree *t_sig = (TTree*)f_sig->Get("incl");
@@ -130,7 +130,7 @@ dataloader_bbar->PrepareTrainingAndTestTree(cut +out_layers +sig_cut,cut + out_l
 /////////////////////////////BOOKING METHODS/////////////////////////////////
 // Boosted Decision Trees with adaptive boosting
 
-factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDTA2", "!H:!V:NTrees=400:MinNodeSize=4%:\
+factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////

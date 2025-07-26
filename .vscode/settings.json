@@ -2,6 +2,7 @@
     "files.associations": {
         "continuum.C": "cpp",
         "my_app.C": "cpp",
-        "punzi.C": "cpp"
+        "punzi.C": "cpp",
+        "bbar.C": "cpp"
     }
 }

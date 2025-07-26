@@ -121,6 +121,7 @@ dataloader_continuum->AddVariable("thrust_Bm", 'F');
 TCut out_layers = "deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50";
 TCut cut ="tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && abs(cos_pBtag_Dltag) < 1.25";
 TCut sig_cut = "isSignalAcceptMissingNeutrino_Bsig==1";
+
 Int_t ntrain_sig = round((t_sig->GetEntries(cut +out_layers + sig_cut))*0.833333); Int_t ntest_sig = round((t_sig->GetEntries(cut +out_layers + sig_cut))*0.166667);
 
 
