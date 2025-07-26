@@ -386,7 +386,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 
 
-void plot2() {
+void plot3() {
   // Enable statistics display
   gStyle->SetOptStat(1111); // Show entries, mean, RMS, etc.
   gStyle->SetStatW(0.15);   // Stats box width
