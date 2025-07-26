@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "continuum.C": "cpp"
+        "continuum.C": "cpp",
+        "my_app.C": "cpp",
+        "punzi.C": "cpp"
     }
 }
