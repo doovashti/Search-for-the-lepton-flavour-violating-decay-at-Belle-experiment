@@ -27,8 +27,8 @@ void app2(){
 
 ////////////////////////Creating TFiles with the BTD score for each entry in each TFile//////////////////////////
 ///////////////Loading, creating and copying the TTrees
-TFile *f_in_s = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
-TFile* f_out_s = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root", "RECREATE"); 
+TFile *f_in_s = new TFile("MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
+TFile* f_out_s = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root", "RECREATE"); 
 
 TTree* Data_s = (TTree*)f_in_s->Get("incl");
 TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -64,7 +64,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 
 /////////////////////Selecting the method for the prediction/////////////////////////
-reader_s->BookMVA("BDT", "/home/ethan_rm/LFV_BELLE/bbar/weights/bbar_BDT_BDTA2.weights.xml");
+reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
  
 ////////////////////////Computing BDT for each Entry/////////////////////////////
 int nEnt_s = Data_s->GetEntries();
@@ -99,9 +99,9 @@ f_out_s->Close();
 ///////////////Loading, creating and copying the TTrees
 
 for (int i=0; i<6;i++){
-     TFile *f_in_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_charm_%d.root",i));
-     TFile* f_out_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_%d.root",i), "RECREATE"); 
-     
+     TFile *f_in_s = new TFile(Form("MC_data/rootfiles/bkg_charm_%d.root",i));
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_charm_%d.root",i), "RECREATE"); 
+
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
      
@@ -134,7 +134,7 @@ reader_s->AddVariable("nPhotonsSelected", &s_uservar05);
 reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "/home/ethan_rm/LFV_BELLE/bbar/weights/bbar_BDT_BDTA2.weights.xml");
+     reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -172,8 +172,8 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 ///////////////Loading, creating and copying the TTrees
 
 for (int i=0; i<6;i++){
-     TFile *f_in_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_uds_%d.root",i));
-     TFile* f_out_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_%d.root",i), "RECREATE"); 
+     TFile *f_in_s = new TFile(Form("MC_data/rootfiles/bkg_uds_%d.root",i));
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_uds_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -207,7 +207,7 @@ reader_s->AddVariable("nPhotonsSelected", &s_uservar05);
 reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "/home/ethan_rm/LFV_BELLE/bbar/weights/bbar_BDT_BDTA2.weights.xml");
+     reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -244,8 +244,8 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 ///////////////Loading, creating and copying the TTrees
 
 for (int i=0; i<10;i++){
-     TFile *f_in_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_charged_%d.root",i));
-     TFile* f_out_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_%d.root",i), "RECREATE"); 
+     TFile *f_in_s = new TFile(Form("MC_data/rootfiles/bkg_charged_%d.root",i));
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_charged_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -279,7 +279,7 @@ reader_s->AddVariable("nPhotonsSelected", &s_uservar05);
 reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "/home/ethan_rm/LFV_BELLE/bbar/weights/bbar_BDT_BDTA2.weights.xml");
+     reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -316,8 +316,8 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 ///////////////Loading, creating and copying the TTrees
 
 for (int i=0; i<10;i++){
-     TFile *f_in_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/rootfiles/bkg_mixed_%d.root",i));
-     TFile* f_out_s = new TFile(Form("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_%d.root",i), "RECREATE"); 
+     TFile *f_in_s = new TFile(Form("MC_data/rootfiles/bkg_mixed_%d.root",i));
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_mixed_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -351,7 +351,7 @@ reader_s->AddVariable("nPhotonsSelected", &s_uservar05);
 reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "/home/ethan_rm/LFV_BELLE/bbar/weights/bbar_BDT_BDTA2.weights.xml");
+     reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -393,44 +393,44 @@ void plot2() {
   gStyle->SetStatH(0.15);   // Stats box height
 
   // Define input files and histogram properties
-  TFile *f_sig = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
+  TFile *f_sig = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
 
-  TFile *f_bkg_uds0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_0.root");
-  TFile *f_bkg_uds1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_1.root");
-  TFile *f_bkg_uds2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_2.root");
-  TFile *f_bkg_uds3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_3.root");
-  TFile *f_bkg_uds4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_4.root");
-  TFile *f_bkg_uds5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_uds_5.root");
+  TFile *f_bkg_uds0 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
+  TFile *f_bkg_uds1 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
+  TFile *f_bkg_uds2 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
+  TFile *f_bkg_uds3 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
+  TFile *f_bkg_uds4 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
+  TFile *f_bkg_uds5 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
 
-  TFile *f_bkg_charm0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_0.root");
-  TFile *f_bkg_charm1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_1.root");
-  TFile *f_bkg_charm2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_2.root");
-  TFile *f_bkg_charm3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_3.root");
-  TFile *f_bkg_charm4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_4.root");
-  TFile *f_bkg_charm5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charm_5.root");
+  TFile *f_bkg_charm0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
+  TFile *f_bkg_charm1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
+  TFile *f_bkg_charm2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
+  TFile *f_bkg_charm3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
+  TFile *f_bkg_charm4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
+  TFile *f_bkg_charm5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
 
-  TFile *f_bkg_charged0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_0.root");
-  TFile *f_bkg_charged1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_1.root");
-  TFile *f_bkg_charged2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_2.root");
-  TFile *f_bkg_charged3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_3.root");
-  TFile *f_bkg_charged4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_4.root");
-  TFile *f_bkg_charged5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_5.root");
-  TFile *f_bkg_charged6 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_6.root");
-  TFile *f_bkg_charged7 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_7.root");
-  TFile *f_bkg_charged8 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_8.root");
-  TFile *f_bkg_charged9 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_charged_9.root");
+  TFile *f_bkg_charged0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
+  TFile *f_bkg_charged1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
+  TFile *f_bkg_charged2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
+  TFile *f_bkg_charged3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
+  TFile *f_bkg_charged4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
+  TFile *f_bkg_charged5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
+  TFile *f_bkg_charged6 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
+  TFile *f_bkg_charged7 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
+  TFile *f_bkg_charged8 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
+  TFile *f_bkg_charged9 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
 
 
-  TFile *f_bkg_mixed0 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
-  TFile *f_bkg_mixed1 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
-  TFile *f_bkg_mixed2 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
-  TFile *f_bkg_mixed3 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
-  TFile *f_bkg_mixed4 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
-  TFile *f_bkg_mixed5 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
-  TFile *f_bkg_mixed6 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
-  TFile *f_bkg_mixed7 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
-  TFile *f_bkg_mixed8 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
-  TFile *f_bkg_mixed9 = new TFile("/home/ethan_rm/LFV_BELLE/MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
+  TFile *f_bkg_mixed0 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
+  TFile *f_bkg_mixed1 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
+  TFile *f_bkg_mixed2 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
+  TFile *f_bkg_mixed3 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
+  TFile *f_bkg_mixed4 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
+  TFile *f_bkg_mixed5 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
+  TFile *f_bkg_mixed6 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
+  TFile *f_bkg_mixed7 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
+  TFile *f_bkg_mixed8 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
+  TFile *f_bkg_mixed9 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
 
   TTree *t_sig = (TTree*)f_sig->Get("incl");
 

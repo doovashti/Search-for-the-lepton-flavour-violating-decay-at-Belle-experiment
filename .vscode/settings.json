@@ -3,6 +3,8 @@
         "continuum.C": "cpp",
         "my_app.C": "cpp",
         "punzi.C": "cpp",
-        "bbar.C": "cpp"
+        "bbar.C": "cpp",
+        "my_app2.C": "cpp",
+        "statistics.C": "cpp"
     }
 }
