@@ -26,7 +26,7 @@ void continuum_MLP(){
 TFile *f_out = new TFile("continuum_MLP.root","RECREATE");
 TMVA::Factory *factory = new TMVA::Factory("continuum_MLP", f_out,"!V:Color=True:DrawProgressBar=True");
 
-///////////Upload the data to train and test the BDT///////////////////////////
+///////////Upload the data to train and test the MLP///////////////////////////
 TFile *f_sig = new TFile("MC_data/rootfiles/signalmc_taum_mup_tightcuts.root");
 
 TFile *f_bkg_charm0 = new TFile("MC_data/rootfiles/bkg_charm_0.root");

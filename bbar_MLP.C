@@ -23,11 +23,11 @@
 void bbar_MLP(){
 
 /////////////////Creating the factory///////////////////////
-TFile *f_out = new TFile("bbar_BDT.root","RECREATE");
-TMVA::Factory *factory = new TMVA::Factory("bbar_BDT", f_out,"!V:Color=True:DrawProgressBar=True");
+TFile *f_out = new TFile("bbar_MLP.root","RECREATE");
+TMVA::Factory *factory = new TMVA::Factory("bbar_MLP", f_out,"!V:Color=True:DrawProgressBar=True");
 
-///////////Upload the data to train and test the BDT///////////////////////////
-TFile *f_sig = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
+///////////Upload the data to train and test the MLP///////////////////////////
+TFile *f_sig = new TFile("MC_data/MLP_continuum/MLP_signalmc_taum_mup_tightcuts.root");
 
 TFile *f_bkg_charged0 = new TFile("MC_data/MLP_continuum/MLP_bkg_charged_0.root");
 TFile *f_bkg_charged1 = new TFile("MC_data/MLP_continuum/MLP_bkg_charged_1.root");
@@ -81,7 +81,7 @@ TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 //////////////////////////////////Adding the TTrees to the Dataloader//////////////////////
 Double_t sig_weight = 1.0; Double_t bkg_weight = 1.0; 
 
-TMVA::DataLoader *dataloader_bbar = new TMVA::DataLoader("bbar");
+TMVA::DataLoader *dataloader_bbar = new TMVA::DataLoader("bbar_MLP");
 
 dataloader_bbar->AddSignalTree(t_sig,sig_weight); 
 
@@ -119,7 +119,7 @@ dataloader_bbar->AddVariable("best_sum", 'F');
 //motivation, what we are doing, types bkg , approach, conclusions 
 /////////////////////////////Cutting and spliting the data//////////////////////////////
 TCut out_layers = "deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50";
-TCut cut ="tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && bdt_continuum > 0.2";
+TCut cut ="tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && MLP_continuum > 0.2";
 TCut sig_cut = "isSignalAcceptMissingNeutrino_Bsig==1";
 Int_t ntrain_sig = round((t_sig->GetEntries(cut +out_layers +sig_cut))*0.833333); Int_t ntest_sig = round((t_sig->GetEntries(cut +out_layers +sig_cut))*0.166667); //0.15  
 
