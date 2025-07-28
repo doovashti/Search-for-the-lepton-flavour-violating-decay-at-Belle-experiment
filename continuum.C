@@ -114,7 +114,7 @@ dataloader_continuum->AddVariable("KSFWVariables_hso22", 'F');
 dataloader_continuum->AddVariable("KSFWVariables_hso24", 'F');
 //dataloader_continuum->AddVariable("KSFWVariables_mm2", 'F'); //correlated with hoo0, et, hso00
 dataloader_continuum->AddVariable("r2", 'F');
-dataloader_continuum->AddVariable("thrust_Bm", 'F');
+dataloader_continuum->AddVariable("thrust_Bm", 'F'); //thrust axis
 //dataloader_continuum->AddVariable("thrust_Om", 'F'); //correlated with r2
 
 /////////////////////////////Cutting and spliting the data//////////////////////////////
@@ -133,6 +133,8 @@ dataloader_continuum->PrepareTrainingAndTestTree(cut +out_layers + sig_cut, cut 
 
 factory->BookMethod(dataloader_continuum, TMVA::Types::kBDT, "BDT_continuum", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
+factory->BookMethod(dataloader_continuum, TMVA::Types::kBDT, "BDTG", "!H:!V:NTrees=400:MinNodeSize=4%:\
+MaxDepth=3:BoostType=Grad:Shrinkage=0.1:nCuts=120:UseNvars=6");
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////
 factory->TrainAllMethods();

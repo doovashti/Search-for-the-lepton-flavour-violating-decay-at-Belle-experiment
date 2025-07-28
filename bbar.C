@@ -132,6 +132,8 @@ dataloader_bbar->PrepareTrainingAndTestTree(cut +out_layers +sig_cut,cut + out_l
 
 factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
+factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDTG", "!H:!V:NTrees=400:MinNodeSize=4%:\
+MaxDepth=3:BoostType=Grad:Shrinkage=0.1:nCuts=120:UseNvars=6");
 
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////
