@@ -103,41 +103,41 @@ TChain *c_bkg_all_cuts = new TChain("incl");
 
 TFile *f_sig_all_cuts = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
 
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_uds_5.root");
 
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charm_5.root");
 
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_6.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_7.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_8.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_charged_9.root");
 
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
-c_bkg_all_cuts->Add("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_0.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_1.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_2.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_3.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_4.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_5.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_6.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_7.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_8.root");
+c_bkg_all_cuts->Add("MC_data/bdt_both/bdt_bkg_mixed_9.root");
 
 
 //////////////cuts for the bdt scores 
