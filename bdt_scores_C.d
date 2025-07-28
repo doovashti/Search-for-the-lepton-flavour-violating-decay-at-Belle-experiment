@@ -98,6 +98,9 @@
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TPaveText.h
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TText.h
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TVirtualPaveStats.h
+./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TStyle.h
+./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TColor.h
+./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TGraph.h
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TMVA/Tools.h
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TXMLEngine.h
 ./bdt_scores_C.so: /home/ethan_rm/anaconda3/envs/ethan/include/TMatrixDSymfwd.h

@@ -6,6 +6,7 @@
 #include "iostream"
 #include "TString.h"
 #include "TChain.h"
+#include  <vector>
 
 /////To create plots of histograms////
 #include"TCanvas.h"
@@ -13,7 +14,8 @@
 #include "TLegend.h"  
 #include "THStack.h"
 #include "TPaveStats.h"
-
+#include "TStyle.h"
+#include "TGraph.h"
 ////////TMVA libraries//////////
 #include "TMVA/Tools.h"
 #include "TMVA/Factory.h"
@@ -33,7 +35,7 @@ c_bkg_continuum->Add("MC_data/bdt_bbar/bdt_bkg_uds_*.root");
 c_bkg_continuum->Add("MC_data/bdt_bbar/bdt_bkg_charm_*.root");
 c_bkg_bbar->Add("MC_data/bdt_bbar/bdt_bkg_charged_*.root");
 c_bkg_bbar->Add("MC_data/bdt_bbar/bdt_bkg_mixed_*.root");
-
+/*
 TH1F *h_signal_bdtc = new TH1F("h_signal_bdtc", "bdt scores distributions; bdt", 21, -1, 1);
 TH1F *h_continuum_bdtc = new TH1F("h_continuum_bdtc", "bdt scores distributions; bdt", 21, -1, 1);
 TH1F *h_bbar_bdtc = new TH1F("h_bbar_bdtc", "bdt scores distributions; bdt", 21, -1, 1);
@@ -135,5 +137,94 @@ gPad->Update();
   leg->AddEntry(h_bbar_bdtb,"bdt_bbar bbar", "f");
 
   leg->Draw();
+/////////////////////////////////////
+*/
+double xVar, yVar;
+
+    // Vectors to store data for each chain
+    std::vector<double> x1, y1, x2, y2, x3, y3;
+
+    // Extract data from chain1
+    t_sig->SetBranchAddress("bdt_continuum", &xVar); // Replace "xVar" with your branch name
+    t_sig->SetBranchAddress("bdt_bbar", &yVar); // Replace "yVar" with your branch name
+    Long64_t nEntries1 = t_sig->GetEntries();
+    for (Long64_t i = 0; i < nEntries1; i++) {
+        t_sig->GetEntry(i);
+        x1.push_back(xVar);
+        y1.push_back(yVar);
+    }
+
+    // Extract data from chain2
+    c_bkg_continuum->SetBranchAddress("bdt_continuum", &xVar);
+    c_bkg_continuum->SetBranchAddress("bdt_bbar", &yVar);
+    Long64_t nEntries2 = c_bkg_continuum->GetEntries();
+    for (Long64_t i = 0; i < nEntries2; i++) {
+        c_bkg_continuum->GetEntry(i);
+        x2.push_back(xVar);
+        y2.push_back(yVar);
+    }
+
+    // Extract data from chain3
+    c_bkg_bbar->SetBranchAddress("bdt_continuum", &xVar);
+    c_bkg_bbar->SetBranchAddress("bdt_bbar", &yVar);
+    Long64_t nEntries3 = c_bkg_bbar->GetEntries();
+    for (Long64_t i = 0; i < nEntries3; i++) {
+        c_bkg_bbar->GetEntry(i);
+        x3.push_back(xVar);
+        y3.push_back(yVar);
+    }
+
+    // Create TGraph objects for each chain
+    TGraph *graph1 = new TGraph(x1.size(), x1.data(), y1.data());
+    TGraph *graph2 = new TGraph(x2.size(), x2.data(), y2.data());
+    TGraph *graph3 = new TGraph(x3.size(), x3.data(), y3.data());
+
+    // Customize graphs
+    graph1->SetTitle("Signal and background distributions ;bdt_continuum;bdt_bbar");
+    graph1->SetMarkerStyle(20); // Filled circle
+    graph1->SetMarkerColor(kBlue);
+    graph1->SetMarkerSize(1.2);
+
+    graph2->SetMarkerStyle(21); // Filled square
+    graph2->SetMarkerColor(kRed);
+    graph2->SetMarkerSize(1.2);
+
+    graph3->SetMarkerStyle(22); // Filled triangle
+    graph3->SetMarkerColor(kGreen);
+    graph3->SetMarkerSize(1.2);
+
+    // Create a canvas
+    TCanvas *canvas = new TCanvas("canvas", "Scatter Plot", 800, 600);
+
+    // Draw the first graph with axes
+ 
+
+    // Draw additional graphs with points only ("P SAME")
+    graph2->Draw("AP");
+    graph3->Draw("P SAME");
+    graph1->Draw("P SAME");
+    // Customize appearance
+    gStyle->SetOptStat(0); // Disable statistics box
+    graph1->GetXaxis()->SetTitleSize(0.04);
+    graph1->GetYaxis()->SetTitleSize(0.04);
+
+    // Add a legend
+    TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+    legend->AddEntry(graph1, "Chain 1", "p");
+    legend->AddEntry(graph2, "Chain 2", "p");
+    legend->AddEntry(graph3, "Chain 3", "p");
+    legend->Draw();
+
+    // Save the plot
+    canvas->SaveAs("scatter_plot_tchains.png");
+
+    // Clean up
+    delete t_sig; delete c_bkg_continuum; delete c_bkg_bbar;
+    delete canvas;
+
+
+
+
+
 
 }

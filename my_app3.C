@@ -28,7 +28,7 @@ void app3(){
 ////////////////////////Creating TFiles with the BTD score for each entry in each TFile//////////////////////////
 ///////////////Loading, creating and copying the TTrees
 TFile *f_in_s = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
-TFile* f_out_s = new TFile("MC_data/bdt_both/bdt_signalmc_taum_mup_tightcuts.root", "RECREATE"); 
+TFile* f_out_s = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root", "RECREATE"); 
 
 TTree* Data_s = (TTree*)f_in_s->Get("incl");
 TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -100,7 +100,7 @@ f_out_s->Close();
 
 for (int i=0; i<6;i++){
      TFile *f_in_s = new TFile(Form("MC_data/bdt_continuum/bdt_bkg_charm_%d.root",i));
-     TFile* f_out_s = new TFile(Form("MC_data/bdt_both/bdt_bkg_charm_%d.root",i), "RECREATE"); 
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_charm_%d.root",i), "RECREATE"); 
 
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -173,7 +173,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 for (int i=0; i<6;i++){
      TFile *f_in_s = new TFile(Form("MC_data/bdt_continuum/bdt_bkg_uds_%d.root",i));
-     TFile* f_out_s = new TFile(Form("MC_data/bdt_both/bdt_bkg_uds_%d.root",i), "RECREATE"); 
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_uds_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -245,7 +245,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 for (int i=0; i<10;i++){
      TFile *f_in_s = new TFile(Form("MC_data/bdt_continuum/bdt_bkg_charged_%d.root",i));
-     TFile* f_out_s = new TFile(Form("MC_data/bdt_both/bdt_bkg_charged_%d.root",i), "RECREATE"); 
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_charged_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
@@ -317,7 +317,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 for (int i=0; i<10;i++){
      TFile *f_in_s = new TFile(Form("MC_data/bdt_continuum/bdt_bkg_mixed_%d.root",i));
-     TFile* f_out_s = new TFile(Form("MC_data/bdt_both/bdt_bkg_mixed_%d.root",i), "RECREATE"); 
+     TFile* f_out_s = new TFile(Form("MC_data/bdt_bbar/bdt_bkg_mixed_%d.root",i), "RECREATE"); 
      
      TTree* Data_s = (TTree*)f_in_s->Get("incl");
      TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree

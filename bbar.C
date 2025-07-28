@@ -119,7 +119,7 @@ dataloader_bbar->AddVariable("best_sum", 'F');
 //motivation, what we are doing, types bkg , approach, conclusions 
 /////////////////////////////Cutting and spliting the data//////////////////////////////
 TCut out_layers = "deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50";
-TCut cut ="tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15  ";
+TCut cut ="tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && bdt_continuum > 0.28";
 TCut sig_cut = "isSignalAcceptMissingNeutrino_Bsig==1";
 Int_t ntrain_sig = round((t_sig->GetEntries(cut +out_layers +sig_cut))*0.833333); Int_t ntest_sig = round((t_sig->GetEntries(cut +out_layers +sig_cut))*0.166667); //0.15  
 
@@ -130,12 +130,9 @@ dataloader_bbar->PrepareTrainingAndTestTree(cut +out_layers +sig_cut,cut + out_l
 /////////////////////////////BOOKING METHODS/////////////////////////////////
 // Boosted Decision Trees with adaptive boosting
 
-factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=800:MinNodeSize=6%:\
-MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:nCuts=120:UseNvars=6"); 
-/*
 factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
-*/
+
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////
 factory->TrainAllMethods();
