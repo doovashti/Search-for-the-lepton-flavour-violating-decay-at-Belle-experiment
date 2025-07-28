@@ -35,7 +35,7 @@ TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
 
 //////////////Setting the new branches for the final file
 
-Double_t s_bdt=-1;
+Double_t s_MLP=-1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99.,s_var05=-99.,s_var06=-99.,s_var07=-99.,s_var08=-99.,s_var09=-99.,s_var10=-99.,s_var11=-99.,s_var12=-99.;
 Double_t s_var13=-99.,s_var14=-99.,s_var15=-99.,s_var16=-99.,s_var17=-99.,s_var18=-99.,s_var19=-99.,s_var20=-99.,s_var21=-99.,s_var22=-99.,s_var23=-99.,s_var24=-99.;
 Double_t s_var25=-99.,s_var26=-99.,s_var27=-99.,s_var28=-99.,s_var29=-99.,s_var30=-99.;
@@ -72,7 +72,7 @@ Data_s->SetBranchAddress("thrust_Bm", &s_var29);
 //Data_s->SetBranchAddress("thrust_Om", &s_var30);
 
 
-TBranch* bdtBranch_s = t_out_s->Branch("bdt_continuum", &s_bdt, "bdt_continuum/D"); //Creating the new branch for the bdt variable
+TBranch* MLPBranch_s = t_out_s->Branch("MLP_continuum", &s_MLP, "MLP_continuum/D"); //Creating the new branch for the MLP variable
         
 /////////////////////////Setting the TMVA READER/////////////////////////
         
@@ -114,9 +114,9 @@ reader_s->AddVariable("thrust_Bm", &s_uservar29);
 //reader_s->AddVariable("thrust_Om", &s_uservar30);
 
 /////////////////////Selecting the method for the prediction/////////////////////////
-reader_s->BookMVA("BDT", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
+reader_s->BookMVA("MLP", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
  
-////////////////////////Computing BDT for each Entry/////////////////////////////
+////////////////////////Computing MLP for each Entry/////////////////////////////
 int nEnt_s = Data_s->GetEntries();
         
 // ------- start your event loop
@@ -159,10 +159,10 @@ for (Long64_t ievt_s=0; ievt_s<nEnt_s; ++ievt_s) {
      s_uservar29 = s_var29;
      //s_uservar30 = s_var30;
      
-     s_bdt = reader_s->EvaluateMVA("BDT");
+     s_MLP = reader_s->EvaluateMVA("MLP");
      t_out_s->Fill();
 }
-std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
+std::cout<<" Total number of entries for which MLP is evaluated= "<<nEnt_s<<std::endl;
 f_out_s->cd();
 t_out_s->Write();
 delete reader_s;
@@ -182,7 +182,7 @@ for (int i=0; i<6;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+     Double_t s_MLP=-1;
      Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99.,s_var05=-99.,s_var06=-99.,s_var07=-99.,s_var08=-99.,s_var09=-99.,s_var10=-99.,s_var11=-99.,s_var12=-99.;
      Double_t s_var13=-99.,s_var14=-99.,s_var15=-99.,s_var16=-99.,s_var17=-99.,s_var18=-99.,s_var19=-99.,s_var20=-99.,s_var21=-99.,s_var22=-99.,s_var23=-99.,s_var24=-99.;
      Double_t s_var25=-99.,s_var26=-99.,s_var27=-99.,s_var28=-99.,s_var29=-99.,s_var30=-99.;
@@ -219,7 +219,7 @@ for (int i=0; i<6;i++){
      //Data_s->SetBranchAddress("thrust_Om", &s_var30);
      
      
-     TBranch* bdtBranch_s = t_out_s->Branch("bdt_continuum", &s_bdt, "bdt_continuum/D"); //Creating the new branch for the bdt variable
+     TBranch* MLPBranch_s = t_out_s->Branch("MLP_continuum", &s_MLP, "MLP_continuum/D"); //Creating the new branch for the MLP variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -261,9 +261,9 @@ for (int i=0; i<6;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
+     reader_s->BookMVA("MLP", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
      
-     ////////////////////////Computing BDT for each Entry/////////////////////////////
+     ////////////////////////Computing MLP for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
              
      // ------- start your event loop
@@ -306,10 +306,10 @@ for (int i=0; i<6;i++){
           s_uservar29 = s_var29;
           //s_uservar30 = s_var30;
           
-          s_bdt = reader_s->EvaluateMVA("BDT");
+          s_MLP = reader_s->EvaluateMVA("MLP");
           t_out_s->Fill();
      }
-     std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
+     std::cout<<" Total number of entries for which MLP is evaluated= "<<nEnt_s<<std::endl;
      f_out_s->cd();
      t_out_s->Write();
      delete reader_s;
@@ -330,7 +330,7 @@ for (int i=0; i<6;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+     Double_t s_MLP=-1;
      Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99.,s_var05=-99.,s_var06=-99.,s_var07=-99.,s_var08=-99.,s_var09=-99.,s_var10=-99.,s_var11=-99.,s_var12=-99.;
      Double_t s_var13=-99.,s_var14=-99.,s_var15=-99.,s_var16=-99.,s_var17=-99.,s_var18=-99.,s_var19=-99.,s_var20=-99.,s_var21=-99.,s_var22=-99.,s_var23=-99.,s_var24=-99.;
      Double_t s_var25=-99.,s_var26=-99.,s_var27=-99.,s_var28=-99.,s_var29=-99.,s_var30=-99.;
@@ -367,7 +367,7 @@ for (int i=0; i<6;i++){
      //Data_s->SetBranchAddress("thrust_Om", &s_var30);
      
      
-     TBranch* bdtBranch_s = t_out_s->Branch("bdt_continuum", &s_bdt, "bdt_continuum/D"); //Creating the new branch for the bdt variable
+     TBranch* MLPBranch_s = t_out_s->Branch("MLP_continuum", &s_MLP, "MLP_continuum/D"); //Creating the new branch for the MLP variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -409,9 +409,9 @@ for (int i=0; i<6;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
+     reader_s->BookMVA("MLP", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
      
-     ////////////////////////Computing BDT for each Entry/////////////////////////////
+     ////////////////////////Computing MLP for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
              
      // ------- start your event loop
@@ -454,10 +454,10 @@ for (int i=0; i<6;i++){
           s_uservar29 = s_var29;
           //s_uservar30 = s_var30;
           
-          s_bdt = reader_s->EvaluateMVA("BDT");
+          s_MLP = reader_s->EvaluateMVA("MLP");
           t_out_s->Fill();
      }
-     std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
+     std::cout<<" Total number of entries for which MLP is evaluated= "<<nEnt_s<<std::endl;
      f_out_s->cd();
      t_out_s->Write();
      delete reader_s;
@@ -478,7 +478,7 @@ for (int i=0; i<10;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+     Double_t s_MLP=-1;
      Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99.,s_var05=-99.,s_var06=-99.,s_var07=-99.,s_var08=-99.,s_var09=-99.,s_var10=-99.,s_var11=-99.,s_var12=-99.;
      Double_t s_var13=-99.,s_var14=-99.,s_var15=-99.,s_var16=-99.,s_var17=-99.,s_var18=-99.,s_var19=-99.,s_var20=-99.,s_var21=-99.,s_var22=-99.,s_var23=-99.,s_var24=-99.;
      Double_t s_var25=-99.,s_var26=-99.,s_var27=-99.,s_var28=-99.,s_var29=-99.,s_var30=-99.;
@@ -515,7 +515,7 @@ for (int i=0; i<10;i++){
      //Data_s->SetBranchAddress("thrust_Om", &s_var30);
      
      
-     TBranch* bdtBranch_s = t_out_s->Branch("bdt_continuum", &s_bdt, "bdt_continuum/D"); //Creating the new branch for the bdt variable
+     TBranch* MLPBranch_s = t_out_s->Branch("MLP_continuum", &s_MLP, "MLP_continuum/D"); //Creating the new branch for the MLP variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -557,9 +557,9 @@ for (int i=0; i<10;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
+     reader_s->BookMVA("MLP", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
      
-     ////////////////////////Computing BDT for each Entry/////////////////////////////
+     ////////////////////////Computing MLP for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
              
      // ------- start your event loop
@@ -602,10 +602,10 @@ for (int i=0; i<10;i++){
           s_uservar29 = s_var29;
           //s_uservar30 = s_var30;
           
-          s_bdt = reader_s->EvaluateMVA("BDT");
+          s_MLP = reader_s->EvaluateMVA("MLP");
           t_out_s->Fill();
      }
-     std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
+     std::cout<<" Total number of entries for which MLP is evaluated= "<<nEnt_s<<std::endl;
      f_out_s->cd();
      t_out_s->Write();
      delete reader_s;
@@ -626,7 +626,7 @@ for (int i=0; i<10;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+     Double_t s_MLP=-1;
      Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99.,s_var05=-99.,s_var06=-99.,s_var07=-99.,s_var08=-99.,s_var09=-99.,s_var10=-99.,s_var11=-99.,s_var12=-99.;
      Double_t s_var13=-99.,s_var14=-99.,s_var15=-99.,s_var16=-99.,s_var17=-99.,s_var18=-99.,s_var19=-99.,s_var20=-99.,s_var21=-99.,s_var22=-99.,s_var23=-99.,s_var24=-99.;
      Double_t s_var25=-99.,s_var26=-99.,s_var27=-99.,s_var28=-99.,s_var29=-99.,s_var30=-99.;
@@ -648,7 +648,7 @@ for (int i=0; i<10;i++){
      Data_s->SetBranchAddress("KSFWVariables_hoo4", &s_var15);
      //Data_s->SetBranchAddress("KSFWVariables_hso00", &s_var16);
      Data_s->SetBranchAddress("KSFWVariables_hso01", &s_var17);
-     //Data_s->SetBranchAddress("KSFWVariables_hso02", &s_var18);
+     //Data_s->SetBranchAddress("KSFWVariables_hso02", &sMLP_continuum_var18);
      Data_s->SetBranchAddress("KSFWVariables_hso03", &s_var19);
      Data_s->SetBranchAddress("KSFWVariables_hso04", &s_var20);
      Data_s->SetBranchAddress("KSFWVariables_hso10", &s_var21);
@@ -663,7 +663,7 @@ for (int i=0; i<10;i++){
      //Data_s->SetBranchAddress("thrust_Om", &s_var30);
      
      
-     TBranch* bdtBranch_s = t_out_s->Branch("bdt_continuum", &s_bdt, "bdt_continuum/D"); //Creating the new branch for the bdt variable
+     TBranch* MLPBranch_s = t_out_s->Branch("MLP_continuum", &s_MLP, "MLP_continuum/D"); //Creating the new branch for the MLP variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -705,9 +705,9 @@ for (int i=0; i<10;i++){
      //reader_s->AddVariable("thrust_Om", &s_uservar30);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
-     reader_s->BookMVA("BDT", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
+     reader_s->BookMVA("MLP", "continuum_MLP/weights/continuum_MLP_MLP.weights.xml");
      
-     ////////////////////////Computing BDT for each Entry/////////////////////////////
+     ////////////////////////Computing MLP for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
              
      // ------- start your event loop
@@ -750,10 +750,10 @@ for (int i=0; i<10;i++){
           s_uservar29 = s_var29;
           //s_uservar30 = s_var30;
           
-          s_bdt = reader_s->EvaluateMVA("BDT");
+          s_MLP = reader_s->EvaluateMVA("MLP");
           t_out_s->Fill();
      }
-     std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
+     std::cout<<" Total number of entries for which MLP is evaluated= "<<nEnt_s<<std::endl;
      f_out_s->cd();
      t_out_s->Write();
      delete reader_s;
@@ -771,7 +771,7 @@ void plot_MLP() {
   gStyle->SetStatH(0.15);   // Stats box height
 
   // Define input files and histogram properties
-  TFile *f_sig = new TFile("MC_data/bdt_continuum/bdt_signalmc_taum_mup_tightcuts.root");
+  TFile *f_sig = new TFile("MC_data/MLP_continuum/MLP_signalmc_taum_mup_tightcuts.root");
 
   TFile *f_bkg_uds0 = new TFile("MC_data/MLP_continuum/MLP_bkg_uds_0.root");
   TFile *f_bkg_uds1 = new TFile("MC_data/MLP_continuum/MLP_bkg_uds_1.root");
@@ -848,48 +848,48 @@ void plot_MLP() {
   TTree *t_bkg_mixed8 = (TTree*)f_bkg_mixed8->Get("incl");
   TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 
-  TH1F *h_sig = new TH1F("h_sig", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT scores;BDT scores; % events", 21, -1, 1);
+  TH1F *h_sig = new TH1F("h_sig", "MLP scores;MLP scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "MLP scores;MLP scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "MLP scores;MLP scores; % events", 21, -1, 1);
  
 
-  t_sig->Draw("bdt_continuum>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_sig->Draw("MLP_continuum>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_uds0->Draw("bdt_continuum>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds1->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds2->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds3->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds4->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds5->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds0->Draw("MLP_continuum>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds1->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds2->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds3->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds4->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds5->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
  
-  t_bkg_charm0->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm1->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm2->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm3->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm4->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm5->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm0->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm1->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm2->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm3->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm4->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm5->Draw("MLP_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_charged0->Draw("bdt_continuum>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged1->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged2->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged3->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged4->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged5->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged6->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged7->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged8->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged9->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged0->Draw("MLP_continuum>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged1->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged2->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged3->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged4->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged5->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged6->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged7->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged8->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged9->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_mixed0->Draw("bdt_continuum>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed1->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed2->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed3->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed4->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed5->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed6->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed7->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed8->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed9->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed0->Draw("MLP_continuum>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed1->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed2->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed3->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed4->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed5->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed6->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed7->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed8->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed9->Draw("MLP_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
   h_sig->SetLineWidth(2);
@@ -909,7 +909,7 @@ void plot_MLP() {
   Float_t y_max = std::max({h_sig->GetMaximum(),h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()}); 
   y_max *= 1.2;
 
-  TCanvas *c0 = new TCanvas("c0","BDT Scores", 1024, 786);
+  TCanvas *c0 = new TCanvas("c0","MLP Scores", 1024, 786);
 
   h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
   h_bkg_continuum->Draw("SAMESHIST");

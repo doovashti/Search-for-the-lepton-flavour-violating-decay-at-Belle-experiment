@@ -24,6 +24,10 @@
         "my_app copy.C": "cpp",
         "my_app_MLP.C": "cpp",
         "bbar copy.C": "cpp",
-        "bbar_MLP.C": "cpp"
+        "bbar_MLP.C": "cpp",
+        "my_app3 copy.C": "cpp",
+        "my_app3_MLP.C": "cpp",
+        "statistics copy.C": "cpp",
+        "statistics_MLP.C": "cpp"
     }
 }
