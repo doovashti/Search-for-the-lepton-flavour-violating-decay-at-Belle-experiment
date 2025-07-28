@@ -130,8 +130,12 @@ dataloader_bbar->PrepareTrainingAndTestTree(cut +out_layers +sig_cut,cut + out_l
 /////////////////////////////BOOKING METHODS/////////////////////////////////
 // Boosted Decision Trees with adaptive boosting
 
+factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=800:MinNodeSize=6%:\
+MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.2:nCuts=120:UseNvars=6"); 
+/*
 factory->BookMethod(dataloader_bbar, TMVA::Types::kBDT, "BDT_bbar", "!H:!V:NTrees=400:MinNodeSize=4%:\
 MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.1:nCuts=120:UseNvars=6"); 
+*/
 
 ////////////////////////////////TRAINING, TESTING AND EVALUATING METHODS///////////////////////
 factory->TrainAllMethods();
