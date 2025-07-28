@@ -120,7 +120,7 @@ Float_t int_luminosity = 711; //fb^-1
 Float_t f_charged = 1-0.486; // fraction of the upsilon decaying into b⁺b⁻
 Float_t bbar_cs = 1.1e06; //fb
 Float_t nBBbar = 2 * int_luminosity * bbar_cs * f_charged; // computing the number of B⁺B⁻
-Float_t br_BtoKTauMu = 5e-05;  //Branching ratio of the LVF process??
+Float_t br_BtoKTauMu = 5e-05;  //Branching ratio of the LVF process?? 2.45e-5
 Float_t br_TautoRho = 0.228; //Branching ratio retrived from Inspired
 Float_t sigtheory = round(nBBbar * br_BtoKTauMu * br_TautoRho); // actual signal events expected at belle
 
@@ -136,6 +136,13 @@ Float_t eff_cut; // # efficiency of the signal
 Float_t sig_weight; // weight of the signal
 Float_t bkg_weight; // weight of the background
 Float_t pun_fom; // value of the punzi fom
+
+//names
+//outline
+//introduction
+//10-12 slides 
+// R2 >0.4
+
 
 /////////////Rejection of the obvious background + outlayers
 //TCut out_layers = "deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50";
