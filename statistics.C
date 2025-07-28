@@ -146,6 +146,7 @@ float n_sig_selected3 = t_sig->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 float n_bkg_selected3 = c_bkg->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 
 float sig_eff3 = n_sig_selected3/n_sig_original;
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff1) << std::endl;
 Float_t bkg_eff3 = n_bkg_selected3/n_bkg_original;
 
 std::cout << "--------------------------------------" << std::endl;
