@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.34/04 [401924]"/>
     <Info name="Creator" value="ethan_rm"/>
-    <Info name="Date" value="Tue Jul 29 09:51:39 2025"/>
+    <Info name="Date" value="Tue Jul 29 16:54:44 2025"/>
     <Info name="Host" value="Linux 0998ae7ee246 6.11.0-1015-azure #15~24.04.1-Ubuntu SMP Thu May 1 02:52:08 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/home/ethan_rm/LFV_BELLE/Search-for-the-lepton-flavour-violating-decay-at-Belle-experiment"/>
     <Info name="Training events" value="3761"/>
-    <Info name="TrainingTime" value="2.65818410e+01"/>
+    <Info name="TrainingTime" value="3.80188270e+01"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>
