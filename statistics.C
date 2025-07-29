@@ -75,9 +75,12 @@ c_bkg->Add("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
 c_bkg->Add("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
 
 
+TCut true_reco = "isSignalAcceptMissingNeutrino_Bsig==1";
 ////////////////////////////////////Original number of events//////////////////////////////////////////
 float n_sig_original =1e6;
 float n_bkg_original = c_bkg->GetEntries();
+float n_sig_true_reco = t_sig->GetEntries(true_reco);
+
 
 ////////////////////Rejection of obvious background/////////////////////////////////////////////////////
 TCut obv_bkg = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && abs(cos_pBtag_Dltag) < 1.25";
@@ -92,6 +95,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected0 << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff0 << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected0/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected0 << std::endl;
@@ -116,6 +120,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1 << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff1 << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected1/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected1 << std::endl;
@@ -138,6 +143,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2 << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff2 << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected2/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected2 << std::endl;
@@ -157,6 +163,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3 << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff3 << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected3/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected3 << std::endl;
@@ -182,6 +189,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1_bdtg << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff1_bdtg << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected1_bdtg/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected1_bdtg << std::endl;
@@ -204,6 +212,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2_bdtg << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff2_bdtg << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected2_bdtg/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected2_bdtg << std::endl;
@@ -223,6 +232,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3_bdtg << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff3_bdtg << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected3_bdtg/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected3_bdtg << std::endl;
@@ -289,6 +299,8 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1_MLP << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff1_MLP << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected1_MLP/n_sig_true_reco << std::endl;
+    
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected1_MLP << std::endl;
@@ -311,6 +323,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2_MLP << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff2_MLP << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected2_MLP/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected2_MLP << std::endl;
@@ -330,6 +343,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3_MLP << std::endl;
     std::cout << "Signal Efficiency: " << sig_eff3_MLP << std::endl;
+    std::cout << "True Reco Signal Efficiency: " << n_sig_selected3_MLP/n_sig_true_reco << std::endl;
 
     std::cout << "Background Events (total): " << n_bkg_original << std::endl;
     std::cout << "Background Events (selected): " << n_bkg_selected3_MLP << std::endl;
