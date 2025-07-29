@@ -37,22 +37,30 @@ void punzi2(){
 /////////////////// Upload the MC samples///////////////////////////////
 TFile *f_sig = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
 
-TChain *c_bkg_charm = new TChain("incl");
-TChain *c_bkg_uds = new TChain("incl");
+TChain *c_bkg_charged = new TChain("incl");
+TChain *c_bkg_mixed = new TChain("incl");
 
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
-c_bkg_charm->Add("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
+c_bkg_charged->Add("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
 
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
-c_bkg_uds->Add("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
+c_bkg_mixed->Add("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
 
 
 TTree *t_sig = (TTree*)f_sig->Get("incl");
@@ -66,19 +74,19 @@ Double_t  sig_taumode;
 Double_t  sig_bmode;
 Double_t  sig_bdts;
 
-Double_t bkg_mKpi_charm;
-Double_t bkg_mKrho_charm;
-Double_t bkg_taumode_charm;
-Double_t bkg_bmode_charm;
-Double_t bkg_bdts_charm;
-Double_t bkg_mROE_charm;
+Double_t bkg_mKpi_charged;
+Double_t bkg_mKrho_charged;
+Double_t bkg_taumode_charged;
+Double_t bkg_bmode_charged;
+Double_t bkg_bdts_charged;
+Double_t bkg_mROE_charged;
 
-Double_t bkg_mROE_uds;
-Double_t bkg_mKrho_uds;
-Double_t bkg_taumode_uds;
-Double_t bkg_bmode_uds;
-Double_t bkg_bdts_uds;
-Double_t bkg_mKpi_uds;
+Double_t bkg_mROE_mixed;
+Double_t bkg_mKrho_mixed;
+Double_t bkg_taumode_mixed;
+Double_t bkg_bmode_mixed;
+Double_t bkg_bdts_mixed;
+Double_t bkg_mKpi_mixed;
 
 t_sig->SetBranchAddress("tauDecay_decayModeID", &sig_taumode);
 t_sig->SetBranchAddress("Bsig_decayModeID", &sig_bmode);
@@ -87,19 +95,19 @@ t_sig->SetBranchAddress("m_Krho", &sig_mKrho);
 t_sig->SetBranchAddress("m_ROE", &sig_mROE);
 t_sig->SetBranchAddress("bdt_bbar", &sig_bdts);
 
-c_bkg_charm->SetBranchAddress("tauDecay_decayModeID", &bkg_taumode_charm);
-c_bkg_charm->SetBranchAddress("Bsig_decayModeID", &bkg_bmode_charm);
-c_bkg_charm->SetBranchAddress("m_Kpi", &bkg_mKpi_charm);
-c_bkg_charm->SetBranchAddress("m_Krho", &bkg_mKrho_charm);
-c_bkg_charm->SetBranchAddress("m_ROE", &bkg_mROE_charm);
-c_bkg_charm->SetBranchAddress("bdt_bbar", &bkg_bdts_charm);
+c_bkg_charged->SetBranchAddress("tauDecay_decayModeID", &bkg_taumode_charged);
+c_bkg_charged->SetBranchAddress("Bsig_decayModeID", &bkg_bmode_charged);
+c_bkg_charged->SetBranchAddress("m_Kpi", &bkg_mKpi_charged);
+c_bkg_charged->SetBranchAddress("m_Krho", &bkg_mKrho_charged);
+c_bkg_charged->SetBranchAddress("m_ROE", &bkg_mROE_charged);
+c_bkg_charged->SetBranchAddress("bdt_bbar", &bkg_bdts_charged);
 
-c_bkg_uds->SetBranchAddress("tauDecay_decayModeID", &bkg_taumode_uds);
-c_bkg_uds->SetBranchAddress("Bsig_decayModeID", &bkg_bmode_uds);
-c_bkg_uds->SetBranchAddress("m_Kpi", &bkg_mKpi_uds);
-c_bkg_uds->SetBranchAddress("m_Krho", &bkg_mKrho_uds);
-c_bkg_uds->SetBranchAddress("m_ROE", &bkg_mROE_uds);
-c_bkg_uds->SetBranchAddress("bdt_bbar", &bkg_bdts_uds);
+c_bkg_mixed->SetBranchAddress("tauDecay_decayModeID", &bkg_taumode_mixed);
+c_bkg_mixed->SetBranchAddress("Bsig_decayModeID", &bkg_bmode_mixed);
+c_bkg_mixed->SetBranchAddress("m_Kpi", &bkg_mKpi_mixed);
+c_bkg_mixed->SetBranchAddress("m_Krho", &bkg_mKrho_mixed);
+c_bkg_mixed->SetBranchAddress("m_ROE", &bkg_mROE_mixed);
+c_bkg_mixed->SetBranchAddress("bdt_bbar", &bkg_bdts_mixed);
 
 
 ///////////////////////////Creating the new file to store the PUNZI FOM//////////////////////////
@@ -109,8 +117,8 @@ TFile *f_out = new TFile("punzi_fom.root","RECREATE");
 /////////amounth of data processed
 
 Int_t entries_sig = t_sig->GetEntries();
-Int_t entries_bkg_charm = c_bkg_charm->GetEntries();
-Int_t entries_bkg_uds = c_bkg_uds->GetEntries();
+Int_t entries_bkg_charged = c_bkg_charged->GetEntries();
+Int_t entries_bkg_mixed = c_bkg_mixed->GetEntries();
 
 
 Float_t processedevent = entries_sig; //1000000; //Total number of generated events
@@ -182,17 +190,17 @@ for (float cuts =lowerrange; cuts < upperrange; cuts+=stepsize){
     sigmc++;
   }
    
-  for(int i =0; i<entries_bkg_charm; ++i){
-    c_bkg_charm->GetEntry(i);
-    if (bkg_taumode_charm!=1 || bkg_bmode_charm!=3 || abs(bkg_mKpi_charm - 1.864)< 0.2 || bkg_mKrho_charm <1.95 || bkg_mROE_charm > 2.15) continue;
-    if (bkg_bdts_charm<cuts) continue;
+  for(int i =0; i<entries_bkg_charged; ++i){
+    c_bkg_charged->GetEntry(i);
+    if (bkg_taumode_charged!=1 || bkg_bmode_charged!=3 || abs(bkg_mKpi_charged - 1.864)< 0.2 || bkg_mKrho_charged <1.95 || bkg_mROE_charged > 2.15) continue;
+    if (bkg_bdts_charged<cuts) continue;
     bkgmc++;
   } 
 
-  for(int i =0; i<entries_bkg_uds; ++i){
-    c_bkg_uds->GetEntry(i);
-    if (bkg_taumode_uds!=1 || bkg_bmode_uds!=3 || abs(bkg_mKpi_uds - 1.864)< 0.2 || bkg_mKrho_uds <1.95 || bkg_mROE_uds > 2.15) continue;
-    if (bkg_bdts_uds<cuts) continue;
+  for(int i =0; i<entries_bkg_mixed; ++i){
+    c_bkg_mixed->GetEntry(i);
+    if (bkg_taumode_mixed!=1 || bkg_bmode_mixed!=3 || abs(bkg_mKpi_mixed - 1.864)< 0.2 || bkg_mKrho_mixed <1.95 || bkg_mROE_mixed > 2.15) continue;
+    if (bkg_bdts_mixed<cuts) continue;
     bkgmc++;
   }
     
