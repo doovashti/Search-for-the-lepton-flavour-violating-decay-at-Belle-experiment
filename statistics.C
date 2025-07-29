@@ -185,7 +185,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 ////////////////////////////BDT BBAR/////////////////////////////////////
-TCut bbar_cut_bdtg = "bdt_bbar > -0.2";
+TCut bbar_cut_bdtg = "bdt_bbar > -0.13";
 
 
 float n_sig_selected2_bdtg = t_sig->GetEntries(obv_bkg + bbar_cut_bdtg);
