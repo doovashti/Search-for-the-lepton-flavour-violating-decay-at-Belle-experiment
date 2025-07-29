@@ -1,0 +1,1098 @@
+
+Processing continuum_MLP.C+...
+DataSetInfo              : [continuum_MLP] : Added class "Signal"
+                         : Add Tree incl of type Signal with 8317 events
+DataSetInfo              : [continuum_MLP] : Added class "Background"
+                         : Add Tree incl of type Background with 8198 events
+                         : Add Tree incl of type Background with 8249 events
+                         : Add Tree incl of type Background with 8546 events
+                         : Add Tree incl of type Background with 8340 events
+                         : Add Tree incl of type Background with 8193 events
+                         : Add Tree incl of type Background with 8278 events
+                         : Add Tree incl of type Background with 2337 events
+                         : Add Tree incl of type Background with 2233 events
+                         : Add Tree incl of type Background with 2376 events
+                         : Add Tree incl of type Background with 2322 events
+                         : Add Tree incl of type Background with 2380 events
+                         : Add Tree incl of type Background with 2330 events
+Factory                  : Booking method: [1mMLP[0m
+                         : 
+MLP                      : [continuum_MLP] : Create Transformation "N" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'CleoConeCS_1' <---> Output : variable 'CleoConeCS_1'
+                         : Input : variable 'CleoConeCS_2' <---> Output : variable 'CleoConeCS_2'
+                         : Input : variable 'CleoConeCS_3' <---> Output : variable 'CleoConeCS_3'
+                         : Input : variable 'CleoConeCS_4' <---> Output : variable 'CleoConeCS_4'
+                         : Input : variable 'CleoConeCS_5' <---> Output : variable 'CleoConeCS_5'
+                         : Input : variable 'CleoConeCS_6' <---> Output : variable 'CleoConeCS_6'
+                         : Input : variable 'CleoConeCS_7' <---> Output : variable 'CleoConeCS_7'
+                         : Input : variable 'CleoConeCS_8' <---> Output : variable 'CleoConeCS_8'
+                         : Input : variable 'CleoConeCS_9' <---> Output : variable 'CleoConeCS_9'
+                         : Input : variable 'KSFWVariables_et' <---> Output : variable 'KSFWVariables_et'
+                         : Input : variable 'KSFWVariables_hoo0' <---> Output : variable 'KSFWVariables_hoo0'
+                         : Input : variable 'KSFWVariables_hoo1' <---> Output : variable 'KSFWVariables_hoo1'
+                         : Input : variable 'KSFWVariables_hoo2' <---> Output : variable 'KSFWVariables_hoo2'
+                         : Input : variable 'KSFWVariables_hoo3' <---> Output : variable 'KSFWVariables_hoo3'
+                         : Input : variable 'KSFWVariables_hoo4' <---> Output : variable 'KSFWVariables_hoo4'
+                         : Input : variable 'KSFWVariables_hso01' <---> Output : variable 'KSFWVariables_hso01'
+                         : Input : variable 'KSFWVariables_hso03' <---> Output : variable 'KSFWVariables_hso03'
+                         : Input : variable 'KSFWVariables_hso04' <---> Output : variable 'KSFWVariables_hso04'
+                         : Input : variable 'KSFWVariables_hso10' <---> Output : variable 'KSFWVariables_hso10'
+                         : Input : variable 'KSFWVariables_hso12' <---> Output : variable 'KSFWVariables_hso12'
+                         : Input : variable 'KSFWVariables_hso14' <---> Output : variable 'KSFWVariables_hso14'
+                         : Input : variable 'KSFWVariables_hso20' <---> Output : variable 'KSFWVariables_hso20'
+                         : Input : variable 'KSFWVariables_hso22' <---> Output : variable 'KSFWVariables_hso22'
+                         : Input : variable 'KSFWVariables_hso24' <---> Output : variable 'KSFWVariables_hso24'
+                         : Input : variable 'r2' <---> Output : variable 'r2'
+                         : Input : variable 'thrust_Bm' <---> Output : variable 'thrust_Bm'
+MLP                      : Building Network. 
+                         : Initializing weights
+Factory                  : [1mTrain all methods[0m
+                         : Rebuilding Dataset continuum_MLP
+                         : Building event vectors for type 2 Signal
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 1 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 0 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+                         : Building event vectors for type 1 Background
+                         : Dataset[continuum_MLP] :  create input formulas for tree incl
+DataSetFactory           : [continuum_MLP] : Number of events in input trees
+                         : Dataset[continuum_MLP] :     Signal     requirement: "((tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && abs(cos_pBtag_Dltag) < 1.25)&&(deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50))&&(isSignalAcceptMissingNeutrino_Bsig==1)"
+                         : Dataset[continuum_MLP] :     Signal          -- number of events passed: 1203   / sum of weights: 1203 
+                         : Dataset[continuum_MLP] :     Signal          -- efficiency             : 0.144644
+                         : Dataset[continuum_MLP] :     Background requirement: "(tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && abs(cos_pBtag_Dltag) < 1.25)&&(deltaE_Btag<1 &&  deltaE_Btag >-4 && p_ltag < 2.5 && m_ROE<4 && best_sum > -50)"
+                         : Dataset[continuum_MLP] :     Background      -- number of events passed: 3311   / sum of weights: 3311 
+                         : Dataset[continuum_MLP] :     Background      -- efficiency             : 0.0519112
+                         : Dataset[continuum_MLP] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[continuum_MLP] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[continuum_MLP] : Weight renormalisation mode: "EqualNumEvents": renormalises all event classes ...
+                         : Dataset[continuum_MLP] :  such that the effective (weighted) number of events in each class is the same 
+                         : Dataset[continuum_MLP] :  (and equals the number of events (entries) given for class=0 )
+                         : Dataset[continuum_MLP] : ... i.e. such that Sum[i=1..N_j]{w_i} = N_classA, j=classA, classB, ...
+                         : Dataset[continuum_MLP] : ... (note that N_j is the sum of TRAINING events
+                         : Dataset[continuum_MLP] :  ..... Testing events are not renormalised nor included in the renormalisation factor!)
+                         : Number of training and testing events
+                         : ---------------------------------------------------------------------------
+                         : Signal     -- training events            : 1002
+                         : Signal     -- testing events             : 201
+                         : Signal     -- training and testing events: 1203
+                         : Dataset[continuum_MLP] : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.144644
+                         : Background -- training events            : 2759
+                         : Background -- testing events             : 552
+                         : Background -- training and testing events: 3311
+                         : Dataset[continuum_MLP] : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.0519112
+                         : 
+DataSetInfo              : Correlation matrix (Signal):
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                      CleoConeCS_1 CleoConeCS_2 CleoConeCS_3 CleoConeCS_4 CleoConeCS_5 CleoConeCS_6 CleoConeCS_7 CleoConeCS_8 CleoConeCS_9 KSFWVariables_et KSFWVariables_hoo0 KSFWVariables_hoo1 KSFWVariables_hoo2 KSFWVariables_hoo3 KSFWVariables_hoo4 KSFWVariables_hso01 KSFWVariables_hso03 KSFWVariables_hso04 KSFWVariables_hso10 KSFWVariables_hso12 KSFWVariables_hso14 KSFWVariables_hso20 KSFWVariables_hso22 KSFWVariables_hso24      r2 thrust_Bm
+                         :        CleoConeCS_1:       +1.000       -0.270       -0.160       -0.142       -0.081       -0.016       -0.069       +0.035       -0.044           +0.185             +0.058             -0.018             +0.052             -0.013             +0.056              +0.008              +0.030              +0.018              +0.023              +0.054              -0.006              -0.072              +0.065              -0.058  +0.251    +0.327
+                         :        CleoConeCS_2:       -0.270       +1.000       -0.254       -0.141       -0.184       -0.102       -0.011       -0.076       -0.061           +0.078             +0.016             -0.016             -0.009             +0.020             -0.048              +0.028              -0.003              +0.006              +0.024              +0.049              +0.009              -0.023              +0.020              +0.057  +0.299    +0.365
+                         :        CleoConeCS_3:       -0.160       -0.254       +1.000       -0.151       -0.142       -0.083       -0.178       -0.078       -0.043           +0.040             +0.040             -0.029             +0.007             -0.038             -0.007              +0.013              +0.036              +0.042              -0.046              +0.119              +0.007              -0.007              +0.031              -0.075  +0.227    +0.125
+                         :        CleoConeCS_4:       -0.142       -0.141       -0.151       +1.000       -0.176       -0.111       -0.091       -0.120       -0.076           +0.094             +0.106             -0.011             +0.001             +0.007             -0.008              +0.035              +0.015              -0.014              +0.001              +0.010              -0.029              +0.023              -0.044              +0.005  +0.114    -0.041
+                         :        CleoConeCS_5:       -0.081       -0.184       -0.142       -0.176       +1.000       -0.109       -0.105       -0.155       -0.158           -0.001             -0.031             +0.012             +0.047             -0.050             +0.011              -0.072              -0.043              -0.097              +0.028              +0.053              +0.016              -0.023              +0.036              -0.020  -0.032    -0.279
+                         :        CleoConeCS_6:       -0.016       -0.102       -0.083       -0.111       -0.109       +1.000       -0.127       -0.124       -0.140           +0.126             +0.088             -0.035             +0.014             -0.000             +0.059              +0.029              -0.010              -0.161              -0.021              +0.017              +0.035              -0.056              -0.024              +0.025  -0.049    -0.216
+                         :        CleoConeCS_7:       -0.069       -0.011       -0.178       -0.091       -0.105       -0.127       +1.000       -0.138       -0.146           -0.008             +0.010             +0.059             -0.003             +0.051             +0.038              +0.020              -0.059              -0.053              +0.004              -0.088              -0.067              -0.041              -0.013              +0.025  -0.243    -0.200
+                         :        CleoConeCS_8:       +0.035       -0.076       -0.078       -0.120       -0.155       -0.124       -0.138       +1.000       -0.103           +0.014             +0.116             +0.060             +0.057             +0.021             +0.074              -0.023              -0.016              +0.094              +0.003              -0.135              -0.046              -0.021              -0.037              +0.049  -0.308    -0.061
+                         :        CleoConeCS_9:       -0.044       -0.061       -0.043       -0.076       -0.158       -0.140       -0.146       -0.103       +1.000           +0.044             +0.161             -0.006             +0.046             +0.029             -0.001              -0.045              +0.046              +0.183              -0.002              -0.192              +0.056              +0.014              -0.069              -0.033  -0.393    -0.014
+                         :    KSFWVariables_et:       +0.185       +0.078       +0.040       +0.094       -0.001       +0.126       -0.008       +0.014       +0.044           +1.000             +0.463             -0.033             +0.216             +0.003             +0.113              +0.017              +0.040              -0.072              +0.008              +0.066              -0.062              -0.267              +0.015              -0.055  +0.233    +0.171
+                         :  KSFWVariables_hoo0:       +0.058       +0.016       +0.040       +0.106       -0.031       +0.088       +0.010       +0.116       +0.161           +0.463             +1.000             +0.101             +0.305             +0.037             +0.223              -0.007              -0.043              +0.046              +0.032              -0.037              -0.006              +0.429              +0.024              -0.032  -0.057    +0.085
+                         :  KSFWVariables_hoo1:       -0.018       -0.016       -0.029       -0.011       +0.012       -0.035       +0.059       +0.060       -0.006           -0.033             +0.101             +1.000             +0.036             +0.434             +0.088              +0.077              -0.045              -0.027              -0.043              +0.026              -0.061              +0.104              -0.037              -0.046  -0.094    -0.005
+                         :  KSFWVariables_hoo2:       +0.052       -0.009       +0.007       +0.001       +0.047       +0.014       -0.003       +0.057       +0.046           +0.216             +0.305             +0.036             +1.000             -0.038             +0.382              +0.019              -0.011              -0.030              +0.038              +0.012              +0.001              +0.099              -0.000              +0.012  +0.217    +0.021
+                         :  KSFWVariables_hoo3:       -0.013       +0.020       -0.038       +0.007       -0.050       -0.000       +0.051       +0.021       +0.029           +0.003             +0.037             +0.434             -0.038             +1.000             +0.035              +0.013              -0.057              -0.054              +0.017              +0.009              -0.003              +0.041              -0.001              -0.052  -0.047    +0.005
+                         :  KSFWVariables_hoo4:       +0.056       -0.048       -0.007       -0.008       +0.011       +0.059       +0.038       +0.074       -0.001           +0.113             +0.223             +0.088             +0.382             +0.035             +1.000              +0.022              +0.018              +0.001              +0.018              -0.053              +0.026              +0.045              +0.002              -0.004  +0.040    -0.020
+                         : KSFWVariables_hso01:       +0.008       +0.028       +0.013       +0.035       -0.072       +0.029       +0.020       -0.023       -0.045           +0.017             -0.007             +0.077             +0.019             +0.013             +0.022              +1.000              -0.040              -0.055              -0.055              +0.002              -0.051              -0.025              -0.079              -0.068  +0.041    +0.036
+                         : KSFWVariables_hso03:       +0.030       -0.003       +0.036       +0.015       -0.043       -0.010       -0.059       -0.016       +0.046           +0.040             -0.043             -0.045             -0.011             -0.057             +0.018              -0.040              +1.000              +0.002              +0.014              -0.034              -0.015              -0.039              -0.003              -0.017  +0.062    +0.003
+                         : KSFWVariables_hso04:       +0.018       +0.006       +0.042       -0.014       -0.097       -0.161       -0.053       +0.094       +0.183           -0.072             +0.046             -0.027             -0.030             -0.054             +0.001              -0.055              +0.002              +1.000              +0.017              -0.050              +0.023              +0.052              +0.014              -0.004  -0.094    -0.015
+                         : KSFWVariables_hso10:       +0.023       +0.024       -0.046       +0.001       +0.028       -0.021       +0.004       +0.003       -0.002           +0.008             +0.032             -0.043             +0.038             +0.017             +0.018              -0.055              +0.014              +0.017              +1.000              +0.001              +0.092              +0.007              +0.021              +0.001  -0.008    +0.004
+                         : KSFWVariables_hso12:       +0.054       +0.049       +0.119       +0.010       +0.053       +0.017       -0.088       -0.135       -0.192           +0.066             -0.037             +0.026             +0.012             +0.009             -0.053              +0.002              -0.034              -0.050              +0.001              +1.000              +0.010              +0.002              +0.070              -0.100  +0.333    +0.047
+                         : KSFWVariables_hso14:       -0.006       +0.009       +0.007       -0.029       +0.016       +0.035       -0.067       -0.046       +0.056           -0.062             -0.006             -0.061             +0.001             -0.003             +0.026              -0.051              -0.015              +0.023              +0.092              +0.010              +1.000              +0.021              +0.070              +0.008  -0.011    -0.002
+                         : KSFWVariables_hso20:       -0.072       -0.023       -0.007       +0.023       -0.023       -0.056       -0.041       -0.021       +0.014           -0.267             +0.429             +0.104             +0.099             +0.041             +0.045              -0.025              -0.039              +0.052              +0.007              +0.002              +0.021              +1.000              +0.013              +0.014  -0.120    -0.006
+                         : KSFWVariables_hso22:       +0.065       +0.020       +0.031       -0.044       +0.036       -0.024       -0.013       -0.037       -0.069           +0.015             +0.024             -0.037             -0.000             -0.001             +0.002              -0.079              -0.003              +0.014              +0.021              +0.070              +0.070              +0.013              +1.000              -0.013  +0.140    +0.038
+                         : KSFWVariables_hso24:       -0.058       +0.057       -0.075       +0.005       -0.020       +0.025       +0.025       +0.049       -0.033           -0.055             -0.032             -0.046             +0.012             -0.052             -0.004              -0.068              -0.017              -0.004              +0.001              -0.100              +0.008              +0.014              -0.013              +1.000  -0.036    -0.055
+                         :                  r2:       +0.251       +0.299       +0.227       +0.114       -0.032       -0.049       -0.243       -0.308       -0.393           +0.233             -0.057             -0.094             +0.217             -0.047             +0.040              +0.041              +0.062              -0.094              -0.008              +0.333              -0.011              -0.120              +0.140              -0.036  +1.000    +0.411
+                         :           thrust_Bm:       +0.327       +0.365       +0.125       -0.041       -0.279       -0.216       -0.200       -0.061       -0.014           +0.171             +0.085             -0.005             +0.021             +0.005             -0.020              +0.036              +0.003              -0.015              +0.004              +0.047              -0.002              -0.006              +0.038              -0.055  +0.411    +1.000
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetInfo              : Correlation matrix (Background):
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                      CleoConeCS_1 CleoConeCS_2 CleoConeCS_3 CleoConeCS_4 CleoConeCS_5 CleoConeCS_6 CleoConeCS_7 CleoConeCS_8 CleoConeCS_9 KSFWVariables_et KSFWVariables_hoo0 KSFWVariables_hoo1 KSFWVariables_hoo2 KSFWVariables_hoo3 KSFWVariables_hoo4 KSFWVariables_hso01 KSFWVariables_hso03 KSFWVariables_hso04 KSFWVariables_hso10 KSFWVariables_hso12 KSFWVariables_hso14 KSFWVariables_hso20 KSFWVariables_hso22 KSFWVariables_hso24      r2 thrust_Bm
+                         :        CleoConeCS_1:       +1.000       -0.307       -0.159       -0.106       -0.118       -0.121       -0.117       -0.106       -0.051           +0.167             +0.059             -0.016             +0.193             -0.031             +0.179              -0.100              -0.127              +0.307              +0.040              +0.139              +0.108              -0.059              +0.106              +0.090  +0.406    +0.396
+                         :        CleoConeCS_2:       -0.307       +1.000       -0.273       -0.199       -0.176       -0.126       -0.096       -0.077       -0.091           +0.105             +0.072             +0.004             +0.160             +0.005             +0.097              -0.038              -0.049              +0.309              -0.029              +0.115              +0.132              -0.014              +0.092              +0.008  +0.338    +0.289
+                         :        CleoConeCS_3:       -0.159       -0.273       +1.000       -0.211       -0.154       -0.109       -0.085       -0.062       -0.007           +0.137             +0.098             +0.028             +0.113             +0.020             +0.057              -0.064              -0.016              +0.057              -0.034              +0.021              -0.012              -0.057              -0.053              -0.029  +0.110    -0.014
+                         :        CleoConeCS_4:       -0.106       -0.199       -0.211       +1.000       -0.099       -0.075       -0.051       -0.023       -0.031           +0.130             +0.092             +0.019             +0.100             +0.002             +0.003              -0.045              +0.025              -0.192              +0.036              +0.038              -0.033              -0.033              -0.046              -0.048  -0.091    -0.133
+                         :        CleoConeCS_5:       -0.118       -0.176       -0.154       -0.099       +1.000       -0.009       +0.023       -0.019       +0.022           +0.092             +0.098             -0.018             -0.060             +0.001             -0.067              +0.030              +0.059              -0.337              +0.032              -0.086              -0.167              +0.001              -0.095              -0.082  -0.288    -0.180
+                         :        CleoConeCS_6:       -0.121       -0.126       -0.109       -0.075       -0.009       +1.000       +0.072       +0.081       +0.095           +0.104             +0.207             -0.007             -0.089             -0.007             -0.095              +0.049              +0.031              -0.219              +0.022              -0.130              -0.109              +0.089              -0.118              -0.028  -0.398    -0.279
+                         :        CleoConeCS_7:       -0.117       -0.096       -0.085       -0.051       +0.023       +0.072       +1.000       +0.122       +0.091           +0.088             +0.239             +0.046             -0.158             -0.003             -0.111              +0.032              +0.041              -0.142              +0.018              -0.128              -0.053              +0.083              -0.122              -0.021  -0.452    -0.285
+                         :        CleoConeCS_8:       -0.106       -0.077       -0.062       -0.023       -0.019       +0.081       +0.122       +1.000       +0.132           +0.109             +0.290             +0.060             -0.159             +0.009             -0.056              +0.038              +0.020              -0.038              -0.002              -0.143              -0.037              +0.114              -0.141              -0.062  -0.467    -0.258
+                         :        CleoConeCS_9:       -0.051       -0.091       -0.007       -0.031       +0.022       +0.095       +0.091       +0.132       +1.000           +0.144             +0.394             +0.041             -0.185             +0.005             +0.013              +0.034              +0.012              +0.031              -0.038              -0.137              -0.007              +0.162              -0.137              -0.020  -0.449    -0.166
+                         :    KSFWVariables_et:       +0.167       +0.105       +0.137       +0.130       +0.092       +0.104       +0.088       +0.109       +0.144           +1.000             +0.622             +0.060             +0.260             +0.020             +0.150              -0.148              -0.059              +0.117              +0.045              +0.109              +0.031              -0.046              -0.153              -0.061  +0.042    +0.146
+                         :  KSFWVariables_hoo0:       +0.059       +0.072       +0.098       +0.092       +0.098       +0.207       +0.239       +0.290       +0.394           +0.622             +1.000             +0.096             +0.316             +0.039             +0.189              -0.097              -0.072              +0.082              -0.004              -0.005              -0.021              +0.460              -0.005              +0.014  -0.232    +0.003
+                         :  KSFWVariables_hoo1:       -0.016       +0.004       +0.028       +0.019       -0.018       -0.007       +0.046       +0.060       +0.041           +0.060             +0.096             +1.000             +0.032             +0.582             -0.040              -0.337              -0.161              -0.003              +0.066              +0.078              +0.044              +0.041              +0.037              +0.023  -0.045    +0.016
+                         :  KSFWVariables_hoo2:       +0.193       +0.160       +0.113       +0.100       -0.060       -0.089       -0.158       -0.159       -0.185           +0.260             +0.316             +0.032             +1.000             +0.010             +0.563              -0.142              -0.153              +0.225              +0.018              +0.156              +0.064              +0.286              +0.420              +0.190  +0.486    +0.135
+                         :  KSFWVariables_hoo3:       -0.031       +0.005       +0.020       +0.002       +0.001       -0.007       -0.003       +0.009       +0.005           +0.020             +0.039             +0.582             +0.010             +1.000             -0.045              -0.155              -0.085              -0.021              +0.050              +0.049              +0.018              +0.050              +0.021              +0.018  -0.032    +0.008
+                         :  KSFWVariables_hoo4:       +0.179       +0.097       +0.057       +0.003       -0.067       -0.095       -0.111       -0.056       +0.013           +0.150             +0.189             -0.040             +0.563             -0.045             +1.000              -0.072              -0.132              +0.227              -0.001              +0.082              +0.087              +0.111              +0.220              +0.172  +0.302    +0.092
+                         : KSFWVariables_hso01:       -0.100       -0.038       -0.064       -0.045       +0.030       +0.049       +0.032       +0.038       +0.034           -0.148             -0.097             -0.337             -0.142             -0.155             -0.072              +1.000              +0.606              -0.102              -0.014              -0.089              -0.046              +0.044              -0.008              +0.012  -0.153    -0.116
+                         : KSFWVariables_hso03:       -0.127       -0.049       -0.016       +0.025       +0.059       +0.031       +0.041       +0.020       +0.012           -0.059             -0.072             -0.161             -0.153             -0.085             -0.132              +0.606              +1.000              -0.189              -0.001              -0.047              -0.036              -0.018              -0.037              -0.004  -0.142    -0.082
+                         : KSFWVariables_hso04:       +0.307       +0.309       +0.057       -0.192       -0.337       -0.219       -0.142       -0.038       +0.031           +0.117             +0.082             -0.003             +0.225             -0.021             +0.227              -0.102              -0.189              +1.000              -0.108              -0.014              +0.046              -0.072              +0.073              +0.068  +0.441    +0.192
+                         : KSFWVariables_hso10:       +0.040       -0.029       -0.034       +0.036       +0.032       +0.022       +0.018       -0.002       -0.038           +0.045             -0.004             +0.066             +0.018             +0.050             -0.001              -0.014              -0.001              -0.108              +1.000              +0.650              +0.254              -0.067              -0.018              -0.015  -0.021    +0.018
+                         : KSFWVariables_hso12:       +0.139       +0.115       +0.021       +0.038       -0.086       -0.130       -0.128       -0.143       -0.137           +0.109             -0.005             +0.078             +0.156             +0.049             +0.082              -0.089              -0.047              -0.014              +0.650              +1.000              +0.569              -0.077              +0.059              +0.008  +0.275    +0.200
+                         : KSFWVariables_hso14:       +0.108       +0.132       -0.012       -0.033       -0.167       -0.109       -0.053       -0.037       -0.007           +0.031             -0.021             +0.044             +0.064             +0.018             +0.087              -0.046              -0.036              +0.046              +0.254              +0.569              +1.000              -0.052              +0.021              +0.018  +0.179    +0.088
+                         : KSFWVariables_hso20:       -0.059       -0.014       -0.057       -0.033       +0.001       +0.089       +0.083       +0.114       +0.162           -0.046             +0.460             +0.041             +0.286             +0.050             +0.111              +0.044              -0.018              -0.072              -0.067              -0.077              -0.052              +1.000              +0.433              +0.220  -0.182    -0.038
+                         : KSFWVariables_hso22:       +0.106       +0.092       -0.053       -0.046       -0.095       -0.118       -0.122       -0.141       -0.137           -0.153             -0.005             +0.037             +0.420             +0.021             +0.220              -0.008              -0.037              +0.073              -0.018              +0.059              +0.021              +0.433              +1.000              +0.505  +0.222    +0.182
+                         : KSFWVariables_hso24:       +0.090       +0.008       -0.029       -0.048       -0.082       -0.028       -0.021       -0.062       -0.020           -0.061             +0.014             +0.023             +0.190             +0.018             +0.172              +0.012              -0.004              +0.068              -0.015              +0.008              +0.018              +0.220              +0.505              +1.000  +0.088    +0.056
+                         :                  r2:       +0.406       +0.338       +0.110       -0.091       -0.288       -0.398       -0.452       -0.467       -0.449           +0.042             -0.232             -0.045             +0.486             -0.032             +0.302              -0.153              -0.142              +0.441              -0.021              +0.275              +0.179              -0.182              +0.222              +0.088  +1.000    +0.569
+                         :           thrust_Bm:       +0.396       +0.289       -0.014       -0.133       -0.180       -0.279       -0.285       -0.258       -0.166           +0.146             +0.003             +0.016             +0.135             +0.008             +0.092              -0.116              -0.082              +0.192              +0.018              +0.200              +0.088              -0.038              +0.182              +0.056  +0.569    +1.000
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DataSetFactory           : [continuum_MLP] :  
+                         : 
+Factory                  : [continuum_MLP] : Create Transformation "I" with events from all classes.
+                         : 
+                         : Transformation, Variable selection : 
+                         : Input : variable 'CleoConeCS_1' <---> Output : variable 'CleoConeCS_1'
+                         : Input : variable 'CleoConeCS_2' <---> Output : variable 'CleoConeCS_2'
+                         : Input : variable 'CleoConeCS_3' <---> Output : variable 'CleoConeCS_3'
+                         : Input : variable 'CleoConeCS_4' <---> Output : variable 'CleoConeCS_4'
+                         : Input : variable 'CleoConeCS_5' <---> Output : variable 'CleoConeCS_5'
+                         : Input : variable 'CleoConeCS_6' <---> Output : variable 'CleoConeCS_6'
+                         : Input : variable 'CleoConeCS_7' <---> Output : variable 'CleoConeCS_7'
+                         : Input : variable 'CleoConeCS_8' <---> Output : variable 'CleoConeCS_8'
+                         : Input : variable 'CleoConeCS_9' <---> Output : variable 'CleoConeCS_9'
+                         : Input : variable 'KSFWVariables_et' <---> Output : variable 'KSFWVariables_et'
+                         : Input : variable 'KSFWVariables_hoo0' <---> Output : variable 'KSFWVariables_hoo0'
+                         : Input : variable 'KSFWVariables_hoo1' <---> Output : variable 'KSFWVariables_hoo1'
+                         : Input : variable 'KSFWVariables_hoo2' <---> Output : variable 'KSFWVariables_hoo2'
+                         : Input : variable 'KSFWVariables_hoo3' <---> Output : variable 'KSFWVariables_hoo3'
+                         : Input : variable 'KSFWVariables_hoo4' <---> Output : variable 'KSFWVariables_hoo4'
+                         : Input : variable 'KSFWVariables_hso01' <---> Output : variable 'KSFWVariables_hso01'
+                         : Input : variable 'KSFWVariables_hso03' <---> Output : variable 'KSFWVariables_hso03'
+                         : Input : variable 'KSFWVariables_hso04' <---> Output : variable 'KSFWVariables_hso04'
+                         : Input : variable 'KSFWVariables_hso10' <---> Output : variable 'KSFWVariables_hso10'
+                         : Input : variable 'KSFWVariables_hso12' <---> Output : variable 'KSFWVariables_hso12'
+                         : Input : variable 'KSFWVariables_hso14' <---> Output : variable 'KSFWVariables_hso14'
+                         : Input : variable 'KSFWVariables_hso20' <---> Output : variable 'KSFWVariables_hso20'
+                         : Input : variable 'KSFWVariables_hso22' <---> Output : variable 'KSFWVariables_hso22'
+                         : Input : variable 'KSFWVariables_hso24' <---> Output : variable 'KSFWVariables_hso24'
+                         : Input : variable 'r2' <---> Output : variable 'r2'
+                         : Input : variable 'thrust_Bm' <---> Output : variable 'thrust_Bm'
+TFHandler_Factory        :            Variable                   Mean                   RMS           [        Min                   Max ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         :        CleoConeCS_1:              0.92712               1.1033   [               0.0000               6.7817 ]
+                         :        CleoConeCS_2:               1.6712               1.3406   [               0.0000               7.9729 ]
+                         :        CleoConeCS_3:               1.3672               1.1778   [               0.0000               6.6599 ]
+                         :        CleoConeCS_4:               1.0980              0.99994   [               0.0000               5.8698 ]
+                         :        CleoConeCS_5:              0.91542              0.92605   [               0.0000               5.2502 ]
+                         :        CleoConeCS_6:              0.72471              0.77582   [               0.0000               5.5343 ]
+                         :        CleoConeCS_7:              0.62472              0.71496   [               0.0000               5.1418 ]
+                         :        CleoConeCS_8:              0.56444              0.70132   [               0.0000               5.0086 ]
+                         :        CleoConeCS_9:              0.50780              0.69301   [               0.0000               4.6760 ]
+                         :    KSFWVariables_et:               6.8449               1.0435   [               3.3309               12.698 ]
+                         :  KSFWVariables_hoo0:             0.083302             0.042652   [             0.015454              0.75821 ]
+                         :  KSFWVariables_hoo1:          -0.00050165            0.0091234   [            -0.043574             0.097669 ]
+                         :  KSFWVariables_hoo2:             0.012990             0.017037   [            -0.024538              0.16444 ]
+                         :  KSFWVariables_hoo3:          -0.00015739            0.0062594   [            -0.034587             0.045552 ]
+                         :  KSFWVariables_hoo4:            0.0027295             0.011189   [            -0.041794              0.16860 ]
+                         : KSFWVariables_hso01:            -0.027768              0.20212   [              -1.4618              0.91318 ]
+                         : KSFWVariables_hso03:           -0.0039846              0.11838   [             -0.65014              0.47447 ]
+                         : KSFWVariables_hso04:             0.025533              0.11695   [             -0.40427              0.79533 ]
+                         : KSFWVariables_hso10:              0.16948              0.13655   [               0.0000              0.79184 ]
+                         : KSFWVariables_hso12:             0.025037             0.065881   [             -0.21552              0.47826 ]
+                         : KSFWVariables_hso14:            0.0054225             0.035490   [             -0.17872              0.36861 ]
+                         : KSFWVariables_hso20:              0.33177              0.15746   [             0.014172               1.5455 ]
+                         : KSFWVariables_hso22:             0.034470              0.12705   [             -0.36041              0.81473 ]
+                         : KSFWVariables_hso24:            0.0087103             0.080940   [             -0.34321              0.48030 ]
+                         :                  r2:              0.28249              0.15180   [            0.0044488              0.78987 ]
+                         :           thrust_Bm:              0.85437             0.073745   [              0.64577              0.98813 ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         : [32m
+                         : <PlotVariables> Will not produce scatter plots ==> 
+                         : |  The number of 26 input variables and 0 target values would require 325 two-dimensional
+                         : |  histograms, which would occupy the computer's memory. Note that this
+                         : |  suppression does not have any consequences for your analysis, other
+                         : |  than not disposing of these scatter plots. You can modify the maximum
+                         : |  number of input variables allowed to generate scatter plots in your
+                         : |  script via the command line:
+                         : |  "(TMVA::gConfig().GetVariablePlotting()).fMaxNumOfAllowedVariablesForScatterPlots = <some int>;"[0m
+                         : 
+                         : Some more output
+                         : Ranking input variables (method unspecific)...
+IdTransformation         : Ranking result (top variable is best ranked)
+                         : --------------------------------------------
+                         : Rank : Variable            : Separation
+                         : --------------------------------------------
+                         :    1 : r2                  : 4.243e-01
+                         :    2 : thrust_Bm           : 2.262e-01
+                         :    3 : KSFWVariables_hso12 : 1.602e-01
+                         :    4 : CleoConeCS_2        : 1.490e-01
+                         :    5 : KSFWVariables_hoo2  : 1.314e-01
+                         :    6 : KSFWVariables_hso20 : 1.203e-01
+                         :    7 : CleoConeCS_9        : 1.155e-01
+                         :    8 : CleoConeCS_1        : 1.073e-01
+                         :    9 : CleoConeCS_8        : 1.055e-01
+                         :   10 : CleoConeCS_7        : 9.700e-02
+                         :   11 : CleoConeCS_3        : 9.023e-02
+                         :   12 : KSFWVariables_hso22 : 8.704e-02
+                         :   13 : CleoConeCS_6        : 7.353e-02
+                         :   14 : KSFWVariables_hoo0  : 7.234e-02
+                         :   15 : KSFWVariables_et    : 6.700e-02
+                         :   16 : KSFWVariables_hso04 : 6.235e-02
+                         :   17 : KSFWVariables_hso10 : 6.051e-02
+                         :   18 : KSFWVariables_hso01 : 4.647e-02
+                         :   19 : KSFWVariables_hoo4  : 4.116e-02
+                         :   20 : KSFWVariables_hso14 : 4.018e-02
+                         :   21 : KSFWVariables_hso24 : 3.830e-02
+                         :   22 : CleoConeCS_5        : 3.570e-02
+                         :   23 : CleoConeCS_4        : 3.013e-02
+                         :   24 : KSFWVariables_hso03 : 2.307e-02
+                         :   25 : KSFWVariables_hoo3  : 1.256e-02
+                         :   26 : KSFWVariables_hoo1  : 1.246e-02
+                         : --------------------------------------------
+Factory                  : Train method: MLP for Classification
+                         : 
+                         : 
+                         : [1m================================================================[0m
+                         : [1mH e l p   f o r   M V A   m e t h o d   [ MLP ] :[0m
+                         : 
+                         : [1m--- Short description:[0m
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : [1m--- Performance optimisation:[0m
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : [1mOvertraining: [0monly the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : [1m--- Performance tuning via configuration options:[0m
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : [1m================================================================[0m
+                         : 
+TFHandler_MLP            :            Variable                   Mean                   RMS           [        Min                   Max ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         :        CleoConeCS_1:             -0.72658              0.32538   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_2:             -0.58077              0.33628   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_3:             -0.58943              0.35370   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_4:             -0.62590              0.34070   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_5:             -0.65128              0.35277   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_6:             -0.73810              0.28037   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_7:             -0.75700              0.27809   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_8:             -0.77461              0.28005   [              -1.0000               1.0000 ]
+                         :        CleoConeCS_9:             -0.78281              0.29641   [              -1.0000               1.0000 ]
+                         :    KSFWVariables_et:             -0.24971              0.22281   [              -1.0000               1.0000 ]
+                         :  KSFWVariables_hoo0:             -0.81731              0.11485   [              -1.0000               1.0000 ]
+                         :  KSFWVariables_hoo1:             -0.39009              0.12919   [              -1.0000               1.0000 ]
+                         :  KSFWVariables_hoo2:             -0.60284              0.18030   [              -1.0000               1.0000 ]
+                         :  KSFWVariables_hoo3:             -0.14075              0.15621   [              -1.0000               1.0000 ]
+                         :  KSFWVariables_hoo4:             -0.57676              0.10637   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso01:              0.20763              0.17020   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso03:              0.14911              0.21052   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso04:             -0.28342              0.19498   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso10:             -0.57194              0.34490   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso12:             -0.30653              0.18992   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso14:             -0.32713              0.12968   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso20:             -0.58520              0.20565   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso22:             -0.32795              0.21622   [              -1.0000               1.0000 ]
+                         : KSFWVariables_hso24:             -0.14532              0.19657   [              -1.0000               1.0000 ]
+                         :                  r2:             -0.29200              0.38655   [              -1.0000               1.0000 ]
+                         :           thrust_Bm:              0.21859              0.43081   [              -1.0000               1.0000 ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         : Training Network
+                         : 
+                         : Elapsed time for training with 3761 events: [1;31m47.6 sec[0m         
+MLP                      : [continuum_MLP] : Evaluation of MLP on training sample (3761 events)
+                         : Elapsed time for evaluation of 3761 events: [1;31m0.031 sec[0m       
+                         : Creating xml weight file: [0;36mcontinuum_MLP/weights/continuum_MLP_MLP.weights.xml[0m
+                         : Creating standalone class: [0;36mcontinuum_MLP/weights/continuum_MLP_MLP.class.C[0m
+                         : Write special histos to file: continuum_MLP.root:/continuum_MLP/Method_MLP/MLP
+Factory                  : Training finished
+                         : 
+                         : Ranking input variables (method specific)...
+MLP                      : Ranking result (top variable is best ranked)
+                         : --------------------------------------------
+                         : Rank : Variable            : Importance
+                         : --------------------------------------------
+                         :    1 : KSFWVariables_hoo0  : 1.115e+02
+                         :    2 : CleoConeCS_7        : 2.869e+01
+                         :    3 : CleoConeCS_8        : 2.796e+01
+                         :    4 : CleoConeCS_1        : 2.323e+01
+                         :    5 : CleoConeCS_9        : 2.260e+01
+                         :    6 : CleoConeCS_6        : 2.164e+01
+                         :    7 : KSFWVariables_hoo4  : 1.837e+01
+                         :    8 : CleoConeCS_4        : 1.765e+01
+                         :    9 : KSFWVariables_hso20 : 1.735e+01
+                         :   10 : CleoConeCS_2        : 1.598e+01
+                         :   11 : CleoConeCS_5        : 1.560e+01
+                         :   12 : KSFWVariables_hoo2  : 1.538e+01
+                         :   13 : KSFWVariables_hso10 : 1.483e+01
+                         :   14 : CleoConeCS_3        : 1.137e+01
+                         :   15 : KSFWVariables_hoo1  : 7.004e+00
+                         :   16 : thrust_Bm           : 5.861e+00
+                         :   17 : KSFWVariables_hso12 : 5.519e+00
+                         :   18 : KSFWVariables_et    : 4.650e+00
+                         :   19 : KSFWVariables_hso14 : 4.327e+00
+                         :   20 : KSFWVariables_hso22 : 3.854e+00
+                         :   21 : r2                  : 2.797e+00
+                         :   22 : KSFWVariables_hso04 : 2.312e+00
+                         :   23 : KSFWVariables_hso01 : 2.220e+00
+                         :   24 : KSFWVariables_hso03 : 1.924e+00
+                         :   25 : KSFWVariables_hso24 : 1.543e+00
+                         :   26 : KSFWVariables_hoo3  : 1.047e+00
+                         : --------------------------------------------
+Factory                  : === Destroy and recreate all methods via weight files for testing ===
+                         : 
+                         : Reading weight file: [0;36mcontinuum_MLP/weights/continuum_MLP_MLP.weights.xml[0m
+MLP                      : Building Network. 
+                         : Initializing weights
+Factory                  : [1mTest all methods[0m
+Factory                  : Test method: MLP for Classification performance
+                         : 
+MLP                      : [continuum_MLP] : Evaluation of MLP on testing sample (753 events)
+                         : Elapsed time for evaluation of 753 events: [1;31m0.00849 sec[0m       
+Factory                  : [1mEvaluate all methods[0m
+Factory                  : Evaluate classifier: MLP
+                         : 
+TFHandler_MLP            :            Variable                   Mean                   RMS           [        Min                   Max ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         :        CleoConeCS_1:             -0.69215              0.34997   [              -1.0000              0.95761 ]
+                         :        CleoConeCS_2:             -0.53253              0.34893   [              -1.0000              0.72366 ]
+                         :        CleoConeCS_3:             -0.53476              0.36880   [              -1.0000              0.79552 ]
+                         :        CleoConeCS_4:             -0.59993              0.33777   [              -1.0000              0.75859 ]
+                         :        CleoConeCS_5:             -0.70012              0.31148   [              -1.0000               1.0562 ]
+                         :        CleoConeCS_6:             -0.77562              0.26082   [              -1.0000              0.33957 ]
+                         :        CleoConeCS_7:             -0.79811              0.22712   [              -1.0000              0.35674 ]
+                         :        CleoConeCS_8:             -0.81114              0.24509   [              -1.0000              0.77966 ]
+                         :        CleoConeCS_9:             -0.82598              0.25316   [              -1.0000              0.78215 ]
+                         :    KSFWVariables_et:             -0.24529              0.25091   [             -0.89833              0.75202 ]
+                         :  KSFWVariables_hoo0:             -0.80969              0.13645   [              -1.0245              0.89778 ]
+                         :  KSFWVariables_hoo1:             -0.39903              0.12417   [             -0.77953              0.18824 ]
+                         :  KSFWVariables_hoo2:             -0.57163              0.18380   [              -1.0215              0.81591 ]
+                         :  KSFWVariables_hoo3:             -0.15078              0.16307   [             -0.78898              0.43724 ]
+                         :  KSFWVariables_hoo4:             -0.56722              0.10804   [              -1.2040              0.32743 ]
+                         : KSFWVariables_hso01:              0.19426              0.17445   [             -0.52590               1.0750 ]
+                         : KSFWVariables_hso03:              0.15311              0.22720   [             -0.75311               1.4370 ]
+                         : KSFWVariables_hso04:             -0.24824              0.21064   [             -0.86975              0.92384 ]
+                         : KSFWVariables_hso10:             -0.55977              0.35189   [              -1.0677               1.3231 ]
+                         : KSFWVariables_hso12:             -0.26942              0.20278   [             -0.69267              0.85605 ]
+                         : KSFWVariables_hso14:             -0.32029              0.14339   [              -1.1660              0.59624 ]
+                         : KSFWVariables_hso20:             -0.59691              0.21267   [              -1.1006              0.30039 ]
+                         : KSFWVariables_hso22:             -0.29155              0.22458   [             -0.85075              0.73263 ]
+                         : KSFWVariables_hso24:             -0.14761              0.20958   [             -0.68333              0.97380 ]
+                         :                  r2:             -0.18105              0.38934   [             -0.98957              0.99400 ]
+                         :           thrust_Bm:              0.29581              0.39790   [             -0.84549              0.96438 ]
+                         : ------------------------------------------------------------------------------------------------------------------
+MLP                      : [continuum_MLP] : Loop over test events and fill histograms with classifier response...
+                         : 
+TFHandler_MLP            :            Variable                   Mean                   RMS           [        Min                   Max ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         :        CleoConeCS_1:             -0.69215              0.34997   [              -1.0000              0.95761 ]
+                         :        CleoConeCS_2:             -0.53253              0.34893   [              -1.0000              0.72366 ]
+                         :        CleoConeCS_3:             -0.53476              0.36880   [              -1.0000              0.79552 ]
+                         :        CleoConeCS_4:             -0.59993              0.33777   [              -1.0000              0.75859 ]
+                         :        CleoConeCS_5:             -0.70012              0.31148   [              -1.0000               1.0562 ]
+                         :        CleoConeCS_6:             -0.77562              0.26082   [              -1.0000              0.33957 ]
+                         :        CleoConeCS_7:             -0.79811              0.22712   [              -1.0000              0.35674 ]
+                         :        CleoConeCS_8:             -0.81114              0.24509   [              -1.0000              0.77966 ]
+                         :        CleoConeCS_9:             -0.82598              0.25316   [              -1.0000              0.78215 ]
+                         :    KSFWVariables_et:             -0.24529              0.25091   [             -0.89833              0.75202 ]
+                         :  KSFWVariables_hoo0:             -0.80969              0.13645   [              -1.0245              0.89778 ]
+                         :  KSFWVariables_hoo1:             -0.39903              0.12417   [             -0.77953              0.18824 ]
+                         :  KSFWVariables_hoo2:             -0.57163              0.18380   [              -1.0215              0.81591 ]
+                         :  KSFWVariables_hoo3:             -0.15078              0.16307   [             -0.78898              0.43724 ]
+                         :  KSFWVariables_hoo4:             -0.56722              0.10804   [              -1.2040              0.32743 ]
+                         : KSFWVariables_hso01:              0.19426              0.17445   [             -0.52590               1.0750 ]
+                         : KSFWVariables_hso03:              0.15311              0.22720   [             -0.75311               1.4370 ]
+                         : KSFWVariables_hso04:             -0.24824              0.21064   [             -0.86975              0.92384 ]
+                         : KSFWVariables_hso10:             -0.55977              0.35189   [              -1.0677               1.3231 ]
+                         : KSFWVariables_hso12:             -0.26942              0.20278   [             -0.69267              0.85605 ]
+                         : KSFWVariables_hso14:             -0.32029              0.14339   [              -1.1660              0.59624 ]
+                         : KSFWVariables_hso20:             -0.59691              0.21267   [              -1.1006              0.30039 ]
+                         : KSFWVariables_hso22:             -0.29155              0.22458   [             -0.85075              0.73263 ]
+                         : KSFWVariables_hso24:             -0.14761              0.20958   [             -0.68333              0.97380 ]
+                         :                  r2:             -0.18105              0.38934   [             -0.98957              0.99400 ]
+                         :           thrust_Bm:              0.29581              0.39790   [             -0.84549              0.96438 ]
+                         : ------------------------------------------------------------------------------------------------------------------
+                         : [32m
+                         : <PlotVariables> Will not produce scatter plots ==> 
+                         : |  The number of 26 input variables and 0 target values would require 325 two-dimensional
+                         : |  histograms, which would occupy the computer's memory. Note that this
+                         : |  suppression does not have any consequences for your analysis, other
+                         : |  than not disposing of these scatter plots. You can modify the maximum
+                         : |  number of input variables allowed to generate scatter plots in your
+                         : |  script via the command line:
+                         : |  "(TMVA::gConfig().GetVariablePlotting()).fMaxNumOfAllowedVariablesForScatterPlots = <some int>;"[0m
+                         : 
+                         : Some more output
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : continuum_MLP MLP            : 0.937
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : continuum_MLP        MLP            : 0.510 (0.581)       0.835 (0.854)      0.950 (0.951)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+Dataset:continuum_MLP    : Created tree 'TestTree' with 753 events
+                         : 
+Dataset:continuum_MLP    : Created tree 'TrainTree' with 3761 events
+                         : 
+Factory                  : [1mThank you for using TMVA![0m
+                         : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8317
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8198
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8249
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8546
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8340
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8193
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8278
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2337
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2233
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2376
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2322
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2380
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2330
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42414
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42517
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42098
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42844
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42211
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42341
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 41598
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42038
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42070
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42211
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28333
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28339
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28691
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28452
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28300
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28594
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28473
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28410
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28114
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28471
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8317
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8198
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8249
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8546
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8340
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8193
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 8278
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2337
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2233
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2376
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2322
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2380
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 2330
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42414
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42517
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42098
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42844
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42211
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42341
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 41598
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42038
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42070
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 42211
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28333
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28339
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28691
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28452
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28300
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28594
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28473
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28410
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28114
+                         : Booking "MLP" of type "MLP" from continuum_MLP/weights/continuum_MLP_MLP.weights.xml.
+                         : Reading weight file: continuum_MLP/weights/continuum_MLP_MLP.weights.xml
+<HEADER> DataSetInfo              : [Default] : Added class "Signal"
+<HEADER> DataSetInfo              : [Default] : Added class "Background"
+<HEADER> MLP                      : Building Network. 
+                         : Initializing weights
+                         : Booked classifier "MLP" of type: "MLP"
+                         : Rebuilding Dataset Default
+ Total number of entries for which MLP is evaluated= 28471

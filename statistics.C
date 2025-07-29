@@ -301,7 +301,7 @@ c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_9.root");
 
 
 //////////////////////////////////////MLP CONTINUUM//////////////////////////////////////////////////
-TCut continuum_cut_MLP = "MLP_continuum > 0.28";
+TCut continuum_cut_MLP = "MLP_continuum > 0.8";
 
 
 float n_sig_selected1_MLP = t_sig_MLP->GetEntries(obv_bkg + continuum_cut_MLP);
@@ -323,7 +323,7 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 ////////////////////////////MLP BBAR/////////////////////////////////////
-TCut bbar_cut_MLP = "MLP_bbar > 0.09";
+TCut bbar_cut_MLP = "MLP_bbar > 0.48";
 
 
 float n_sig_selected2_MLP = t_sig_MLP->GetEntries(obv_bkg + bbar_cut_MLP);

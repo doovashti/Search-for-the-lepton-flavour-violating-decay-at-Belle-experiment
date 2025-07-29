@@ -514,17 +514,17 @@ void plot3_MLP() {
   t_bkg_mixed9->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 
