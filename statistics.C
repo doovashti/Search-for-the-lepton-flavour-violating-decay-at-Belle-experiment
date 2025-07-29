@@ -150,7 +150,12 @@ float n_sig_selected3 = t_sig->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 float n_bkg_selected3 = c_bkg->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 
 float sig_eff3 = n_sig_selected3/n_sig_original;
+<<<<<<< HEAD
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3) << std::endl;
+Float_t bkg_eff3 = n_bkg_selected3/n_bkg_original;
+=======
 float bkg_eff3 = n_bkg_selected3/n_bkg_original;
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 
 std::cout << "Statistics of both cuts: ";
 std::cout << "--------------------------------------" << std::endl;
@@ -165,8 +170,13 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 
+<<<<<<< HEAD
+///////////////////////////////BDTG Statistics/////////////////////////////////////
+
+=======
 
 ///////////////////////////////BDTG Statistics/////////////////////////////////////
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 //////////////////////////////////////BDTG CONTINUUM//////////////////////////////////////////////////
 TCut continuum_cut_bdtg = "bdtg_continuum > 0.79";
 
@@ -176,8 +186,11 @@ float n_bkg_selected1_bdtg = c_bkg->GetEntries(obv_bkg + continuum_cut_bdtg);
 float sig_eff1_bdtg = n_sig_selected1_bdtg/n_sig_original;
 float bkg_eff1_bdtg = n_sig_selected1_bdtg/n_bkg_original;
 
+<<<<<<< HEAD
+=======
 std::cout << "######################### BDT Gradient Boost #########################"
 std::cout << "Statistics of the continuum cut: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1_bdtg << std::endl;
@@ -190,7 +203,11 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 ////////////////////////////BDT BBAR/////////////////////////////////////
+<<<<<<< HEAD
+TCut bbar_cut_bdtg = "bdt_bbar > -0.13";
+=======
 TCut bbar_cut_bdtg = "bdt_bbar > -0.2";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 
 
 float n_sig_selected2_bdtg = t_sig->GetEntries(obv_bkg + bbar_cut_bdtg);
@@ -199,7 +216,10 @@ float n_bkg_selected2_bdtg = c_bkg->GetEntries(obv_bkg + bbar_cut_bdtg);
 float sig_eff2_bdtg = n_sig_selected2_bdtg/n_sig_original;
 float bkg_eff2_bdtg = n_bkg_selected2_bdtg/n_bkg_original;
 
+<<<<<<< HEAD
+=======
 std::cout << "Statistics of the BB-bar cut: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2_bdtg << std::endl;
@@ -216,9 +236,15 @@ float n_sig_selected3_bdtg = t_sig->GetEntries(obv_bkg + bbar_cut_bdtg + continu
 float n_bkg_selected3_bdtg= c_bkg->GetEntries(obv_bkg + bbar_cut_bdtg + continuum_cut_bdtg);
 
 float sig_eff3_bdtg = n_sig_selected3_bdtg/n_sig_original;
+<<<<<<< HEAD
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_bdtg) << std::endl;
+Float_t bkg_eff3_bdtg = n_bkg_selected3/n_bkg_original;
+
+=======
 float bkg_eff3_bdtg = n_bkg_selected3/n_bkg_original;
 
 std::cout << "Statistics both cuts: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3_bdtg << std::endl;
@@ -229,6 +255,8 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Background Efficiency: " << bkg_eff3_bdtg << std::endl;
     std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_bdtg) << std::endl;
     std::cout << "--------------------------------------" << std::endl;
+<<<<<<< HEAD
+=======
 
 
 
@@ -334,4 +362,5 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Background Efficiency: " << bkg_eff3_MLP << std::endl;
     std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_MLP) << std::endl;
     std::cout << "--------------------------------------" << std::endl;
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 }

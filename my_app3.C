@@ -36,6 +36,7 @@ TTree* t_out_s = Data_s->CloneTree(0); //cloning the input tree
 //////////////Setting the new branches for the final file
 
 Double_t s_bdt=-1;
+Double_t s_bdtg = -1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99., s_var06=-99.;
 Int_t s_var05=-99;
     
@@ -47,6 +48,7 @@ Data_s->SetBranchAddress("nPhotonsSelected", &s_var05);
 Data_s->SetBranchAddress("best_sum", &s_var06);
 
 TBranch* bdtBranch_s = t_out_s->Branch("bdt_bbar", &s_bdt, "bdt_bbar/D"); //Creating the new branch for the bdt variable
+TBranch* bdtgBranch_s = t_out_s->Branch("bdtg_bbar", &s_bdtg, "bdtg_bbar/D"); // Creating the new branch for the bdtg variable
         
 /////////////////////////Setting the TMVA READER/////////////////////////
         
@@ -65,6 +67,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
 
 /////////////////////Selecting the method for the prediction/////////////////////////
 reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
+reader_s->BookMVA("BDTG", "bbar/weights/bbar_BDT_BDTG.weights.xml");
  
 ////////////////////////Computing BDT for each Entry/////////////////////////////
 int nEnt_s = Data_s->GetEntries();
@@ -85,6 +88,7 @@ for (Long64_t ievt_s=0; ievt_s<nEnt_s; ++ievt_s) {
      s_uservar05 = s_var05;
      s_uservar06 = s_var06;     
      s_bdt = reader_s->EvaluateMVA("BDT");
+     s_bdtg = reader_s->EvaluateMVA("BDTG");
      t_out_s->Fill();
 }
 std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
@@ -108,6 +112,7 @@ for (int i=0; i<6;i++){
      //////////////Setting the new branches for the final file
      
 Double_t s_bdt=-1;
+Double_t s_bdtg = -1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99., s_var06=-99.;
 Int_t s_var05=-99;
     
@@ -119,6 +124,7 @@ Data_s->SetBranchAddress("nPhotonsSelected", &s_var05);
 Data_s->SetBranchAddress("best_sum", &s_var06);
 
 TBranch* bdtBranch_s = t_out_s->Branch("bdt_bbar", &s_bdt, "bdt_bbar/D");//Creating the new branch for the bdt variable
+TBranch* bdtgBranch_s = t_out_s->Branch("bdtg_bbar", &s_bdtg, "bdtg_bbar/D"); // Creating the new branch for the bdtg variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -135,6 +141,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
      reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
+     reader_s->BookMVA("BDTG", "bbar/weights/bbar_BDT_BDTG.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -157,6 +164,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
           
           
           s_bdt = reader_s->EvaluateMVA("BDT");
+          s_bdtg = reader_s->EvaluateMVA("BDTG");
           t_out_s->Fill();
      }
      std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
@@ -180,7 +188,8 @@ for (int i=0; i<6;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+Double_t s_bdt=-1;
+Double_t s_bdtg = -1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99., s_var06=-99.;
 Int_t s_var05=-99;
     
@@ -192,6 +201,7 @@ Data_s->SetBranchAddress("nPhotonsSelected", &s_var05);
 Data_s->SetBranchAddress("best_sum", &s_var06);
 
 TBranch* bdtBranch_s = t_out_s->Branch("bdt_bbar", &s_bdt, "bdt_bbar/D"); //Creating the new branch for the bdt variable
+TBranch* bdtgBranch_s = t_out_s->Branch("bdtg_bbar", &s_bdtg, "bdtg_bbar/D"); // Creating the new branch for the bdtg variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -208,6 +218,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
      reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
+     reader_s->BookMVA("BDTG", "bbar/weights/bbar_BDT_BDTG.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -229,6 +240,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
           s_uservar06 = s_var06;
           
           s_bdt = reader_s->EvaluateMVA("BDT");
+          s_bdtg = reader_s->EvaluateMVA("BDTG");
           t_out_s->Fill();
      }
      std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
@@ -252,7 +264,8 @@ for (int i=0; i<10;i++){
      
      //////////////Setting the new branches for the final file
      
-    Double_t s_bdt=-1;
+Double_t s_bdt=-1;
+Double_t s_bdtg = -1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99., s_var06=-99.;
 Int_t s_var05=-99;
     
@@ -264,6 +277,7 @@ Data_s->SetBranchAddress("nPhotonsSelected", &s_var05);
 Data_s->SetBranchAddress("best_sum", &s_var06);
 
 TBranch* bdtBranch_s = t_out_s->Branch("bdt_bbar", &s_bdt, "bdt_bbar/D"); //Creating the new branch for the bdt variable
+TBranch* bdtgBranch_s = t_out_s->Branch("bdtg_bbar", &s_bdtg, "bdtg_bbar/D"); // Creating the new branch for the bdtg variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -280,6 +294,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
      reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
+     reader_s->BookMVA("BDTG", "bbar/weights/bbar_BDT_BDTG.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -301,6 +316,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
           s_uservar06 = s_var06;
           
           s_bdt = reader_s->EvaluateMVA("BDT");
+          s_bdtg = reader_s->EvaluateMVA("BDTG");
           t_out_s->Fill();
      }
      std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
@@ -324,7 +340,8 @@ for (int i=0; i<10;i++){
      
      //////////////Setting the new branches for the final file
      
-     Double_t s_bdt=-1;
+Double_t s_bdt=-1;
+Double_t s_bdtg = -1;
 Double_t s_var01=-99.,s_var02=-99.,s_var03=-99.,s_var04=-99., s_bar06=-99.;
 Int_t s_var05=-99;
     
@@ -336,6 +353,7 @@ Data_s->SetBranchAddress("nPhotonsSelected", &s_var05);
 Data_s->SetBranchAddress("best_sum", &s_var06);
 
 TBranch* bdtBranch_s = t_out_s->Branch("bdt_bbar", &s_bdt, "bdt_bbar/D"); //Creating the new branch for the bdt variable
+TBranch* bdtgBranch_s = t_out_s->Branch("bdtg_bbar", &s_bdtg, "bdtg_bbar/D"); // Creating the new branch for the bdtg variable
              
      /////////////////////////Setting the TMVA READER/////////////////////////
              
@@ -352,6 +370,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
      
      /////////////////////Selecting the method for the prediction/////////////////////////
      reader_s->BookMVA("BDT", "bbar/weights/bbar_BDT_BDT_bbar.weights.xml");
+     reader_s->BookMVA("BDTG", "bbar/weights/bbar_BDT_BDTG.weights.xml");
      
      ////////////////////////Computing BDT for each Entry/////////////////////////////
      int nEnt_s = Data_s->GetEntries();
@@ -373,6 +392,7 @@ reader_s->AddVariable("best_sum", &s_uservar06);
           s_uservar06 = s_var06;
           
           s_bdt = reader_s->EvaluateMVA("BDT");
+          s_bdtg = reader_s->EvaluateMVA("BDTG");
           t_out_s->Fill();
      }
      std::cout<<" Total number of entries for which BDT is evaluated= "<<nEnt_s<<std::endl;
@@ -383,6 +403,149 @@ reader_s->AddVariable("best_sum", &s_uservar06);
      f_out_s->Close();
      }
 }
+
+void plot3_bdtg() {
+  // Enable statistics display
+  gStyle->SetOptStat(1111);
+  gStyle->SetStatW(0.15);
+  gStyle->SetStatH(0.15);
+
+  // Define input files
+  TFile *f_sig = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
+
+  TFile *f_bkg_uds0 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
+  TFile *f_bkg_uds1 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
+  TFile *f_bkg_uds2 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
+  TFile *f_bkg_uds3 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
+  TFile *f_bkg_uds4 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
+  TFile *f_bkg_uds5 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
+
+  TFile *f_bkg_charm0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
+  TFile *f_bkg_charm1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
+  TFile *f_bkg_charm2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
+  TFile *f_bkg_charm3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
+  TFile *f_bkg_charm4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
+  TFile *f_bkg_charm5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
+
+  TFile *f_bkg_charged0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
+  TFile *f_bkg_charged1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
+  TFile *f_bkg_charged2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
+  TFile *f_bkg_charged3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
+  TFile *f_bkg_charged4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
+  TFile *f_bkg_charged5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
+  TFile *f_bkg_charged6 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
+  TFile *f_bkg_charged7 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
+  TFile *f_bkg_charged8 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
+  TFile *f_bkg_charged9 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
+
+  TFile *f_bkg_mixed0 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
+  TFile *f_bkg_mixed1 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
+  TFile *f_bkg_mixed2 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
+  TFile *f_bkg_mixed3 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
+  TFile *f_bkg_mixed4 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
+  TFile *f_bkg_mixed5 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
+  TFile *f_bkg_mixed6 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
+  TFile *f_bkg_mixed7 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
+  TFile *f_bkg_mixed8 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
+  TFile *f_bkg_mixed9 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
+
+  TTree *t_sig = (TTree*)f_sig->Get("incl");
+  TTree *t_bkg_uds[6], *t_bkg_charm[6], *t_bkg_charged[10], *t_bkg_mixed[10];
+
+  t_bkg_uds[0] = (TTree*)f_bkg_uds0->Get("incl");
+  t_bkg_uds[1] = (TTree*)f_bkg_uds1->Get("incl");
+  t_bkg_uds[2] = (TTree*)f_bkg_uds2->Get("incl");
+  t_bkg_uds[3] = (TTree*)f_bkg_uds3->Get("incl");
+  t_bkg_uds[4] = (TTree*)f_bkg_uds4->Get("incl");
+  t_bkg_uds[5] = (TTree*)f_bkg_uds5->Get("incl");
+
+  t_bkg_charm[0] = (TTree*)f_bkg_charm0->Get("incl");
+  t_bkg_charm[1] = (TTree*)f_bkg_charm1->Get("incl");
+  t_bkg_charm[2] = (TTree*)f_bkg_charm2->Get("incl");
+  t_bkg_charm[3] = (TTree*)f_bkg_charm3->Get("incl");
+  t_bkg_charm[4] = (TTree*)f_bkg_charm4->Get("incl");
+  t_bkg_charm[5] = (TTree*)f_bkg_charm5->Get("incl");
+
+  t_bkg_charged[0] = (TTree*)f_bkg_charged0->Get("incl");
+  t_bkg_charged[1] = (TTree*)f_bkg_charged1->Get("incl");
+  t_bkg_charged[2] = (TTree*)f_bkg_charged2->Get("incl");
+  t_bkg_charged[3] = (TTree*)f_bkg_charged3->Get("incl");
+  t_bkg_charged[4] = (TTree*)f_bkg_charged4->Get("incl");
+  t_bkg_charged[5] = (TTree*)f_bkg_charged5->Get("incl");
+  t_bkg_charged[6] = (TTree*)f_bkg_charged6->Get("incl");
+  t_bkg_charged[7] = (TTree*)f_bkg_charged7->Get("incl");
+  t_bkg_charged[8] = (TTree*)f_bkg_charged8->Get("incl");
+  t_bkg_charged[9] = (TTree*)f_bkg_charged9->Get("incl");
+
+  t_bkg_mixed[0] = (TTree*)f_bkg_mixed0->Get("incl");
+  t_bkg_mixed[1] = (TTree*)f_bkg_mixed1->Get("incl");
+  t_bkg_mixed[2] = (TTree*)f_bkg_mixed2->Get("incl");
+  t_bkg_mixed[3] = (TTree*)f_bkg_mixed3->Get("incl");
+  t_bkg_mixed[4] = (TTree*)f_bkg_mixed4->Get("incl");
+  t_bkg_mixed[5] = (TTree*)f_bkg_mixed5->Get("incl");
+  t_bkg_mixed[6] = (TTree*)f_bkg_mixed6->Get("incl");
+  t_bkg_mixed[7] = (TTree*)f_bkg_mixed7->Get("incl");
+  t_bkg_mixed[8] = (TTree*)f_bkg_mixed8->Get("incl");
+  t_bkg_mixed[9] = (TTree*)f_bkg_mixed9->Get("incl");
+
+  // Make histograms for BDTG
+  TH1F *h_sig = new TH1F("h_sig", "BDTG scores;BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDTG scores;BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDTG scores;BDTG scores; % events", 21, -1, 1);
+
+  TString cut = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15";
+
+  t_sig->Draw("bdtg_bbar>>h_sig", cut, "goff");
+
+  for (int i=0; i<6; i++) t_bkg_uds[i]->Draw("bdtg_bbar>>+h_bkg_continuum", cut, "goff");
+  for (int i=0; i<6; i++) t_bkg_charm[i]->Draw("bdtg_bbar>>+h_bkg_continuum", cut, "goff");
+
+  t_bkg_charged[0]->Draw("bdtg_bbar>>h_bkg_bbar", cut, "goff");
+  for (int i=1; i<10; i++) t_bkg_charged[i]->Draw("bdtg_bbar>>+h_bkg_bbar", cut, "goff");
+  for (int i=0; i<10; i++) t_bkg_mixed[i]->Draw("bdtg_bbar>>+h_bkg_bbar", cut, "goff");
+
+  // Normalize and set styles
+  h_sig->Scale(1.0 / h_sig->Integral());
+  h_sig->SetLineWidth(2);
+  h_sig->SetLineColor(kViolet);
+  h_sig->SetMarkerColor(kViolet);
+
+  h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
+  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineColor(kOrange+7);
+  h_bkg_continuum->SetMarkerColor(kOrange+7);
+
+  h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
+  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineColor(kGreen+2);
+  h_bkg_bbar->SetMarkerColor(kGreen+2);
+
+  Float_t y_max = std::max({h_sig->GetMaximum(), h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()});
+  y_max *= 1.2;
+
+  TCanvas *c1 = new TCanvas("c1","BDTG Scores", 1024, 786);
+
+  h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
+  h_bkg_continuum->Draw("SAMESHIST");
+  h_bkg_bbar->Draw("SAMESHIST");
+
+  gPad->Update();
+
+  // Stats boxes and legend
+  TPaveStats *s_sig = (TPaveStats*)h_sig->FindObject("stats");
+  if (s_sig) { s_sig->SetX1NDC(0.75); s_sig->SetX2NDC(0.90); s_sig->SetY1NDC(0.90); s_sig->SetY2NDC(1.00); s_sig->SetTextColor(kViolet); }
+  TPaveStats *s_bkg_continuum = (TPaveStats*)h_bkg_continuum->FindObject("stats");
+  if (s_bkg_continuum) { s_bkg_continuum->SetX1NDC(0.60); s_bkg_continuum->SetX2NDC(0.75); s_bkg_continuum->SetY1NDC(0.85); s_bkg_continuum->SetY2NDC(0.95); s_bkg_continuum->SetTextColor(kOrange+7); }
+  TPaveStats *s_bkg_bbar = (TPaveStats*)h_bkg_bbar->FindObject("stats");
+  if (s_bkg_bbar) { s_bkg_bbar->SetX1NDC(0.45); s_bkg_bbar->SetX2NDC(0.60); s_bkg_bbar->SetY1NDC(0.80); s_bkg_bbar->SetY2NDC(0.90); s_bkg_bbar->SetTextColor(kGreen+2); }
+
+  TLegend *leg = new TLegend(0.60, 0.60, 0.9, 0.9);
+  leg->AddEntry(h_sig, "Signal MC (BDTG)", "f");
+  leg->AddEntry(h_bkg_continuum, "continuum bkg (BDTG)", "f");
+  leg->AddEntry(h_bkg_bbar, "bbar bkg (BDTG)", "f");
+  leg->Draw();
+}
+
 
 
 
