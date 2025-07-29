@@ -493,7 +493,7 @@ void plot3_bdtg() {
   TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDTG scores;BDTG scores; % events", 21, -1, 1);
   TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDTG scores;BDTG scores; % events", 21, -1, 1);
 
-  TString cut = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15";
+  TString cut = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && bdt_continuum > 0.28";
 
   t_sig->Draw("bdtg_bbar>>h_sig", cut, "goff");
 
@@ -506,17 +506,17 @@ void plot3_bdtg() {
 
   // Normalize and set styles
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kViolet);
   h_sig->SetMarkerColor(kViolet);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kOrange+7);
   h_bkg_continuum->SetMarkerColor(kOrange+7);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen+2);
   h_bkg_bbar->SetMarkerColor(kGreen+2);
 
@@ -637,57 +637,57 @@ void plot3() {
   TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT scores;BDT scores; % events", 21, -1, 1);
   TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT scores;BDT scores; % events", 21, -1, 1);
  
+  TString cuts = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && bdt_continuum > 0.28";
+  t_sig->Draw("bdt_bbar>>h_sig", cuts, "goff");
 
-  t_sig->Draw("bdt_bbar>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-
-  t_bkg_uds0->Draw("bdt_bbar>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds1->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds2->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds3->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds4->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds5->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds0->Draw("bdt_bbar>>h_bkg_continuum",  cuts, "goff");
+  t_bkg_uds1->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds2->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds3->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds4->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds5->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
  
-  t_bkg_charm0->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm1->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm2->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm3->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm4->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm5->Draw("bdt_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm0->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm1->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm2->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm3->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm4->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm5->Draw("bdt_bbar>>+h_bkg_continuum", cuts, "goff");
 
-  t_bkg_charged0->Draw("bdt_bbar>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged1->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged2->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged3->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged4->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged5->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged6->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged7->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged8->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged9->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged0->Draw("bdt_bbar>>h_bkg_bbar",  cuts, "goff");
+  t_bkg_charged1->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged2->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged3->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged4->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged5->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged6->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged7->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged8->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged9->Draw("bdt_bbar>>+h_bkg_bbar", cuts, "goff");
 
-  t_bkg_mixed0->Draw("bdt_bbar>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed1->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed2->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed3->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed4->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed5->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed6->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed7->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed8->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed9->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed0->Draw("bdt_bbar>>++h_bkg_bbar", cuts, "goff");
+  t_bkg_mixed1->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed2->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed3->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed4->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed5->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed6->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed7->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed8->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed9->Draw("bdt_bbar>>+h_bkg_bbar",  cuts, "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 

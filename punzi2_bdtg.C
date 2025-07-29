@@ -32,7 +32,7 @@ double punji_fom(float eff, float nb, float wb){
 }
 // --- Compute Punzi FOM from ROC Curve ---
   // Estimate total expected background events (replace with your experiment’s value)
-void punzi2(){
+void punzi2_bdtg(){
 
 /////////////////// Upload the MC samples///////////////////////////////
 TFile *f_sig = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");

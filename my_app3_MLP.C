@@ -6,6 +6,7 @@
 #include "TMath.h"
 #include "iostream"
 #include "TString.h"
+#include "TChain.h"
 
 /////To create plots of histograms////
 #include"TCanvas.h"
@@ -473,45 +474,45 @@ void plot3_MLP() {
   TH1F *h_sig = new TH1F("h_sig", "MLP scores;MLP scores; % events", 21, -1, 1);
   TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "MLP scores;MLP scores; % events", 21, -1, 1);
   TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "MLP scores;MLP scores; % events", 21, -1, 1);
+  TCut cuts = "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15 && MLP_continuum > 0.8";
+
+  t_sig->Draw("MLP_bbar>>h_sig", cuts, "goff");
+
+  t_bkg_uds0->Draw("MLP_bbar>>h_bkg_continuum",  cuts, "goff");
+  t_bkg_uds1->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds2->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds3->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds4->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_uds5->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
  
+  t_bkg_charm0->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm1->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm2->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm3->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm4->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
+  t_bkg_charm5->Draw("MLP_bbar>>+h_bkg_continuum", cuts, "goff");
 
-  t_sig->Draw("MLP_bbar>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged0->Draw("MLP_bbar>>h_bkg_bbar",  cuts, "goff");
+  t_bkg_charged1->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged2->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged3->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged4->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged5->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged6->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged7->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged8->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
+  t_bkg_charged9->Draw("MLP_bbar>>+h_bkg_bbar", cuts, "goff");
 
-  t_bkg_uds0->Draw("MLP_bbar>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds1->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds2->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds3->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds4->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds5->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
- 
-  t_bkg_charm0->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm1->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm2->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm3->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm4->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm5->Draw("MLP_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-
-  t_bkg_charged0->Draw("MLP_bbar>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged1->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged2->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged3->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged4->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged5->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged6->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged7->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged8->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged9->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-
-  t_bkg_mixed0->Draw("MLP_bbar>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed1->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed2->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed3->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed4->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed5->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed6->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed7->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed8->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed9->Draw("MLP_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed0->Draw("MLP_bbar>>++h_bkg_bbar", cuts, "goff");
+  t_bkg_mixed1->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed2->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed3->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed4->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed5->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed6->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed7->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed8->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
+  t_bkg_mixed9->Draw("MLP_bbar>>+h_bkg_bbar",  cuts, "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
   h_sig->SetLineWidth(5);
