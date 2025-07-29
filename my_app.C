@@ -868,68 +868,68 @@ void plot() {
   TTree *t_bkg_mixed8 = (TTree*)f_bkg_mixed8->Get("incl");
   TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 
-  TH1F *h_sig = new TH1F("h_sig", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT scores;BDT scores; % events", 21, -1, 1);
+  TH1F *h_sig = new TH1F("h_sig", "BDT Scores (for BDT trained with continuum background events);BDT scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT Scores (for BDT trained with continuum background events);BDT scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT Scores (for BDT trained with continuum background events);BDT scores; % events", 21, -1, 1);
  
 
-  t_sig->Draw("bdtg_continuum>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_sig->Draw("bdt_continuum>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_uds0->Draw("bdtg_continuum>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds1->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds2->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds3->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds4->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_uds5->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds0->Draw("bdt_continuum>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds1->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds2->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds3->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds4->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_uds5->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
  
-  t_bkg_charm0->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm1->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm2->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm3->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm4->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charm5->Draw("bdtg_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm0->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm1->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm2->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm3->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm4->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charm5->Draw("bdt_continuum>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_charged0->Draw("bdtg_continuum>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged1->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged2->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged3->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged4->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged5->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged6->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged7->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged8->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_charged9->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged0->Draw("bdt_continuum>>h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged1->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged2->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged3->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged4->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged5->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged6->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged7->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged8->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_charged9->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
-  t_bkg_mixed0->Draw("bdtg_continuum>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed1->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed2->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed3->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed4->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed5->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed6->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed7->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed8->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
-  t_bkg_mixed9->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed0->Draw("bdt_continuum>>++h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed1->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed2->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed3->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed4->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed5->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed6->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed7->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed8->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_bkg_mixed9->Draw("bdt_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 
   Float_t y_max = std::max({h_sig->GetMaximum(),h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()}); 
   y_max *= 1.2;
 
-  TCanvas *c0 = new TCanvas("c0","BDT Scores", 1024, 786);
+  TCanvas *c0 = new TCanvas("c0","BDT Scores (for BDT trained with continuum background events)", 1024, 786);
 
   h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
   h_bkg_continuum->Draw("SAMESHIST");
@@ -1051,9 +1051,9 @@ void plot_bdtg() {
   TTree *t_bkg_mixed8 = (TTree*)f_bkg_mixed8->Get("incl");
   TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 
-  TH1F *h_sig = new TH1F("h_sig", "BDTG scores;BDTG scores; % events", 21, -1, 1);
-  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDTG scores;BDTG scores; % events", 21, -1, 1);
-  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDTG scores;BDTG scores; % events", 21, -1, 1);
+  TH1F *h_sig = new TH1F("h_sig", "BDTG Scores (for BDTG trained with continuum background events);BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDTG Scores (for BDTG trained with continuum background events);BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDTG Scores (for BDTG trained with continuum background events);BDTG scores; % events", 21, -1, 1);
  
 
   t_sig->Draw("bdtg_continuum>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
@@ -1095,24 +1095,24 @@ void plot_bdtg() {
   t_bkg_mixed9->Draw("bdtg_continuum>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 
   Float_t y_max = std::max({h_sig->GetMaximum(),h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()}); 
   y_max *= 1.2;
 
-  TCanvas *c0 = new TCanvas("c0","BDTG Scores", 1024, 786);
+  TCanvas *c0 = new TCanvas("c0","BDTG Scores (for BDTG trained with continuum background events)", 1024, 786);
 
   h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
   h_bkg_continuum->Draw("SAMESHIST");

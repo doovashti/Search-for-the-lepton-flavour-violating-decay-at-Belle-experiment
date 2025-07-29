@@ -487,9 +487,9 @@ void plot2() {
   TTree *t_bkg_mixed8 = (TTree*)f_bkg_mixed8->Get("incl");
   TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 
-  TH1F *h_sig = new TH1F("h_sig", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT scores;BDT scores; % events", 21, -1, 1);
+  TH1F *h_sig = new TH1F("h_sig", "BDT Scores (for BDT trained with B#bar{B} background events);BDT scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT Scores (for BDT trained with B#bar{B} background events);BDT scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT Scores (for BDT trained with B#bar{B} background events);BDT scores; % events", 21, -1, 1);
  
 
   t_sig->Draw("bdt_bbar>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
@@ -531,24 +531,24 @@ void plot2() {
   t_bkg_mixed9->Draw("bdt_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 
   Float_t y_max = std::max({h_sig->GetMaximum(),h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()}); 
   y_max *= 1.2;
 
-  TCanvas *c0 = new TCanvas("c0","BDT Scores", 1024, 786);
+  TCanvas *c0 = new TCanvas("c0","BDT Scores (for BDT trained with BBbar background events)", 1024, 786);
 
   h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
   h_bkg_continuum->Draw("SAMESHIST");
@@ -595,42 +595,42 @@ void plot2_bdtg() {
   // Define input files and histogram properties
   TFile *f_sig = new TFile("MC_data/bdt_bbar/bdt_signalmc_taum_mup_tightcuts.root");
 
-  TFile *f_bkg_uds0 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_0.root");
-  TFile *f_bkg_uds1 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_1.root");
-  TFile *f_bkg_uds2 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_2.root");
-  TFile *f_bkg_uds3 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_3.root");
-  TFile *f_bkg_uds4 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_4.root");
-  TFile *f_bkg_uds5 = new TFile("MC_data/bdtg_bbar/bdt_bkg_uds_5.root");
+  TFile *f_bkg_uds0 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_0.root");
+  TFile *f_bkg_uds1 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_1.root");
+  TFile *f_bkg_uds2 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_2.root");
+  TFile *f_bkg_uds3 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_3.root");
+  TFile *f_bkg_uds4 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_4.root");
+  TFile *f_bkg_uds5 = new TFile("MC_data/bdt_bbar/bdt_bkg_uds_5.root");
 
-  TFile *f_bkg_charm0 = new TFile("MC_data/bdg_bbar/bdt_bkg_charm_0.root");
-  TFile *f_bkg_charm1 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charm_1.root");
-  TFile *f_bkg_charm2 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charm_2.root");
-  TFile *f_bkg_charm3 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charm_3.root");
-  TFile *f_bkg_charm4 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charm_4.root");
-  TFile *f_bkg_charm5 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charm_5.root");
+  TFile *f_bkg_charm0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_0.root");
+  TFile *f_bkg_charm1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_1.root");
+  TFile *f_bkg_charm2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_2.root");
+  TFile *f_bkg_charm3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_3.root");
+  TFile *f_bkg_charm4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_4.root");
+  TFile *f_bkg_charm5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charm_5.root");
 
-  TFile *f_bkg_charged0 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_0.root");
-  TFile *f_bkg_charged1 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_1.root");
-  TFile *f_bkg_charged2 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_2.root");
-  TFile *f_bkg_charged3 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_3.root");
-  TFile *f_bkg_charged4 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_4.root");
-  TFile *f_bkg_charged5 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_5.root");
-  TFile *f_bkg_charged6 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_6.root");
-  TFile *f_bkg_charged7 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_7.root");
-  TFile *f_bkg_charged8 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_8.root");
-  TFile *f_bkg_charged9 = new TFile("MC_data/bdtg_bbar/bdt_bkg_charged_9.root");
+  TFile *f_bkg_charged0 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_0.root");
+  TFile *f_bkg_charged1 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_1.root");
+  TFile *f_bkg_charged2 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_2.root");
+  TFile *f_bkg_charged3 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_3.root");
+  TFile *f_bkg_charged4 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_4.root");
+  TFile *f_bkg_charged5 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_5.root");
+  TFile *f_bkg_charged6 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_6.root");
+  TFile *f_bkg_charged7 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_7.root");
+  TFile *f_bkg_charged8 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_8.root");
+  TFile *f_bkg_charged9 = new TFile("MC_data/bdt_bbar/bdt_bkg_charged_9.root");
 
 
-  TFile *f_bkg_mixed0 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_0.root");
-  TFile *f_bkg_mixed1 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_1.root");
-  TFile *f_bkg_mixed2 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_2.root");
-  TFile *f_bkg_mixed3 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_3.root");
-  TFile *f_bkg_mixed4 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_4.root");
-  TFile *f_bkg_mixed5 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_5.root");
-  TFile *f_bkg_mixed6 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_6.root");
-  TFile *f_bkg_mixed7 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_7.root");
-  TFile *f_bkg_mixed8 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_8.root");
-  TFile *f_bkg_mixed9 = new TFile("MC_data/bdtg_bbar/bdt_bkg_mixed_9.root");
+  TFile *f_bkg_mixed0 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_0.root");
+  TFile *f_bkg_mixed1 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_1.root");
+  TFile *f_bkg_mixed2 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_2.root");
+  TFile *f_bkg_mixed3 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_3.root");
+  TFile *f_bkg_mixed4 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_4.root");
+  TFile *f_bkg_mixed5 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_5.root");
+  TFile *f_bkg_mixed6 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_6.root");
+  TFile *f_bkg_mixed7 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_7.root");
+  TFile *f_bkg_mixed8 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_8.root");
+  TFile *f_bkg_mixed9 = new TFile("MC_data/bdt_bbar/bdt_bkg_mixed_9.root");
 
   TTree *t_sig = (TTree*)f_sig->Get("incl");
 
@@ -670,12 +670,12 @@ void plot2_bdtg() {
   TTree *t_bkg_mixed8 = (TTree*)f_bkg_mixed8->Get("incl");
   TTree *t_bkg_mixed9 = (TTree*)f_bkg_mixed9->Get("incl");
 
-  TH1F *h_sig = new TH1F("h_sig", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDT scores;BDT scores; % events", 21, -1, 1);
-  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDT scores;BDT scores; % events", 21, -1, 1);
+  TH1F *h_sig = new TH1F("h_sig", "BDTG Scores (for BDTG trained with B#bar{B} background events);BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_continuum = new TH1F("h_bkg_continuum", "BDTG Scores (for BDTG trained with B#bar{B} background events);BDTG scores; % events", 21, -1, 1);
+  TH1F *h_bkg_bbar = new TH1F("h_bkg_bbar", "BDTG Scores (for BDTG trained with B#bar{B} background events);BDTG scores; % events", 21, -1, 1);
  
 
-  t_sig->Draw("bdt_bbar>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
+  t_sig->Draw("bdtg_bbar>>h_sig", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   t_bkg_uds0->Draw("bdtg_bbar>>h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
   t_bkg_uds1->Draw("bdtg_bbar>>+h_bkg_continuum", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
@@ -714,24 +714,24 @@ void plot2_bdtg() {
   t_bkg_mixed9->Draw("bdtg_bbar>>+h_bkg_bbar", "tauDecay_decayModeID==1 && Bsig_decayModeID==3 && abs(m_Kpi - 1.864) > 0.2 &&  m_Krho > 1.95 && m_ROE < 2.15", "goff");
 
   h_sig->Scale(1.0 / h_sig->Integral());
-  h_sig->SetLineWidth(2);
+  h_sig->SetLineWidth(5);
   h_sig->SetLineColor(kBlue);
   h_sig->SetMarkerColor(kBlue);
 
   h_bkg_continuum->Scale(1.0 / h_bkg_continuum->Integral());
-  h_bkg_continuum->SetLineWidth(2);
+  h_bkg_continuum->SetLineWidth(5);
   h_bkg_continuum->SetLineColor(kRed);
   h_bkg_continuum->SetMarkerColor(kRed);
 
   h_bkg_bbar->Scale(1.0 / h_bkg_bbar->Integral());
-  h_bkg_bbar->SetLineWidth(2);
+  h_bkg_bbar->SetLineWidth(5);
   h_bkg_bbar->SetLineColor(kGreen);
   h_bkg_bbar->SetMarkerColor(kGreen);
 
   Float_t y_max = std::max({h_sig->GetMaximum(),h_bkg_continuum->GetMaximum(), h_bkg_bbar->GetMaximum()}); 
   y_max *= 1.2;
 
-  TCanvas *c0 = new TCanvas("c0","BDT Scores", 1024, 786);
+  TCanvas *c0 = new TCanvas("c0","BDTG Scores (for BDTG trained with BBbar background events)", 1024, 786);
 
   h_sig->SetMaximum(y_max); h_sig->SetMinimum(0); h_sig->Draw("HIST");
   h_bkg_continuum->Draw("SAMESHIST");
