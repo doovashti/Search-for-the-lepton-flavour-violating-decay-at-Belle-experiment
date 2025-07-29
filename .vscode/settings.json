@@ -78,6 +78,7 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "punzi_MLP.C": "cpp",
-        "punzi2_MLP.C": "cpp"
+        "punzi2_MLP.C": "cpp",
+        "foxWolframR2.C": "cpp"
     }
 }
