@@ -87,7 +87,7 @@ float n_bkg_selected0 = c_bkg->GetEntries(obv_bkg);
 
 float sig_eff0 = n_sig_selected0/n_sig_original;
 float bkg_eff0 = n_bkg_selected0/n_bkg_original;
-
+std::cout << "######################### Rejection of the obvious Background #########################"
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected0 << std::endl;
@@ -110,6 +110,8 @@ float n_bkg_selected1 = c_bkg->GetEntries(obv_bkg + continuum_cut);
 float sig_eff1 = n_sig_selected1/n_sig_original;
 float bkg_eff1 = n_bkg_selected1/n_bkg_original;
 
+std::cout << "######################### BDT Ada Booster #########################";
+std::cout << "Statistics of the continuum cut: ";
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1 << std::endl;
@@ -131,6 +133,7 @@ float n_bkg_selected2 = c_bkg->GetEntries(obv_bkg + bbar_cut);
 float sig_eff2 = n_sig_selected2/n_sig_original;
 float bkg_eff2 = n_bkg_selected2/n_bkg_original;
 
+std::cout << "Statistics of the BB-bar cut: ";
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2 << std::endl;
@@ -147,9 +150,14 @@ float n_sig_selected3 = t_sig->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 float n_bkg_selected3 = c_bkg->GetEntries(obv_bkg + bbar_cut + continuum_cut);
 
 float sig_eff3 = n_sig_selected3/n_sig_original;
+<<<<<<< HEAD
     std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3) << std::endl;
 Float_t bkg_eff3 = n_bkg_selected3/n_bkg_original;
+=======
+float bkg_eff3 = n_bkg_selected3/n_bkg_original;
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 
+std::cout << "Statistics of both cuts: ";
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3 << std::endl;
@@ -162,8 +170,13 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 
+<<<<<<< HEAD
 ///////////////////////////////BDTG Statistics/////////////////////////////////////
 
+=======
+
+///////////////////////////////BDTG Statistics/////////////////////////////////////
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 //////////////////////////////////////BDTG CONTINUUM//////////////////////////////////////////////////
 TCut continuum_cut_bdtg = "bdtg_continuum > 0.79";
 
@@ -173,6 +186,11 @@ float n_bkg_selected1_bdtg = c_bkg->GetEntries(obv_bkg + continuum_cut_bdtg);
 float sig_eff1_bdtg = n_sig_selected1_bdtg/n_sig_original;
 float bkg_eff1_bdtg = n_sig_selected1_bdtg/n_bkg_original;
 
+<<<<<<< HEAD
+=======
+std::cout << "######################### BDT Gradient Boost #########################"
+std::cout << "Statistics of the continuum cut: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected1_bdtg << std::endl;
@@ -185,7 +203,11 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "--------------------------------------" << std::endl;
 
 ////////////////////////////BDT BBAR/////////////////////////////////////
+<<<<<<< HEAD
 TCut bbar_cut_bdtg = "bdt_bbar > -0.13";
+=======
+TCut bbar_cut_bdtg = "bdt_bbar > -0.2";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 
 
 float n_sig_selected2_bdtg = t_sig->GetEntries(obv_bkg + bbar_cut_bdtg);
@@ -194,6 +216,10 @@ float n_bkg_selected2_bdtg = c_bkg->GetEntries(obv_bkg + bbar_cut_bdtg);
 float sig_eff2_bdtg = n_sig_selected2_bdtg/n_sig_original;
 float bkg_eff2_bdtg = n_bkg_selected2_bdtg/n_bkg_original;
 
+<<<<<<< HEAD
+=======
+std::cout << "Statistics of the BB-bar cut: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected2_bdtg << std::endl;
@@ -210,9 +236,15 @@ float n_sig_selected3_bdtg = t_sig->GetEntries(obv_bkg + bbar_cut_bdtg + continu
 float n_bkg_selected3_bdtg= c_bkg->GetEntries(obv_bkg + bbar_cut_bdtg + continuum_cut_bdtg);
 
 float sig_eff3_bdtg = n_sig_selected3_bdtg/n_sig_original;
+<<<<<<< HEAD
     std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_bdtg) << std::endl;
 Float_t bkg_eff3_bdtg = n_bkg_selected3/n_bkg_original;
 
+=======
+float bkg_eff3_bdtg = n_bkg_selected3/n_bkg_original;
+
+std::cout << "Statistics both cuts: ";
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 std::cout << "--------------------------------------" << std::endl;
     std::cout << "Signal Events (total): " << n_sig_original << std::endl;
     std::cout << "Signal Events (selected): " << n_sig_selected3_bdtg << std::endl;
@@ -223,4 +255,112 @@ std::cout << "--------------------------------------" << std::endl;
     std::cout << "Background Efficiency: " << bkg_eff3_bdtg << std::endl;
     std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_bdtg) << std::endl;
     std::cout << "--------------------------------------" << std::endl;
+<<<<<<< HEAD
+=======
+
+
+
+/////////////////////////////////////// MLP STATISTICS ///////////////////////////////////////////   
+TFile *f_sig_original_MLP = new TFile("MC_data/MLP_bbar/MLP_signalmc_taum_mup_tightcuts.root");
+TTree *t_sig_MLP = (TTree*)f_sig_original_MLP->Get("incl");
+
+TChain *c_bkg = new TChain("incl");
+
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_0.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_1.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_2.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_3.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_4.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_uds_5.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_0.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_1.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_2.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_3.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_4.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charm_5.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_0.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_1.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_2.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_3.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_4.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_5.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_6.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_7.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_8.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_charged_9.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_0.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_1.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_2.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_3.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_4.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_5.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_6.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_7.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_8.root");
+c_bkg_MLP->Add("MC_data/MLP_bbar/MLP_bkg_mixed_9.root");
+
+
+//////////////////////////////////////MLP CONTINUUM//////////////////////////////////////////////////
+TCut continuum_cut_MLP = "MLP_continuum > 0.28";
+
+
+float n_sig_selected1_MLP = t_sig_MLP->GetEntries(obv_bkg + continuum_cut_MLP);
+float n_bkg_selected1_MLP = c_bkg_MLP->GetEntries(obv_bkg + continuum_cut_MLP);
+
+float sig_eff1_MLP = n_sig_selected1_MLP/n_sig_original;
+float bkg_eff1_MLP = n_bkg_selected1_MLP/n_bkg_original;
+
+std::cout << "Statistics of the continuum cut: ";
+std::cout << "--------------------------------------" << std::endl;
+    std::cout << "Signal Events (total): " << n_sig_original << std::endl;
+    std::cout << "Signal Events (selected): " << n_sig_selected1_MLP << std::endl;
+    std::cout << "Signal Efficiency: " << sig_eff1_MLP << std::endl;
+
+    std::cout << "Background Events (total): " << n_bkg_original << std::endl;
+    std::cout << "Background Events (selected): " << n_bkg_selected1_MLP << std::endl;
+    std::cout << "Background Efficiency: " << bkg_eff1_MLP << std::endl;
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff1_MLP) << std::endl;
+    std::cout << "--------------------------------------" << std::endl;
+
+////////////////////////////MLP BBAR/////////////////////////////////////
+TCut bbar_cut_MLP = "MLP_bbar > 0.09";
+
+
+float n_sig_selected2_MLP = t_sig_MLP->GetEntries(obv_bkg + bbar_cut_MLP);
+float n_bkg_selected2_MLP = c_bkg_MLP->GetEntries(obv_bkg + bbar_cut_MLP);
+
+float sig_eff2_MLP = n_sig_selected2_MLP/n_sig_original;
+float bkg_eff2_MLP = n_bkg_selected2_MLP/n_bkg_original;
+
+std::cout << "Statistics of the BB-bar cut: ";
+std::cout << "--------------------------------------" << std::endl;
+    std::cout << "Signal Events (total): " << n_sig_original << std::endl;
+    std::cout << "Signal Events (selected): " << n_sig_selected2_MLP << std::endl;
+    std::cout << "Signal Efficiency: " << sig_eff2_MLP << std::endl;
+
+    std::cout << "Background Events (total): " << n_bkg_original << std::endl;
+    std::cout << "Background Events (selected): " << n_bkg_selected2_MLP << std::endl;
+    std::cout << "Background Efficiency: " << bkg_eff2_MLP << std::endl;
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff2_MLP) << std::endl;
+    std::cout << "--------------------------------------" << std::endl;
+
+///////////////////////////////////////ALL CUTS//////////////////////////
+float n_sig_selected3_MLP = t_sig->GetEntries(obv_bkg + bbar_cut_MLP + continuum_cut_MLP);
+float n_bkg_selected3_MLP = c_bkg->GetEntries(obv_bkg + bbar_cut_MLP + continuum_cut_MLP);
+
+float sig_eff3_MLP = n_sig_selected3_MLP/n_sig_original;
+float bkg_eff3_MLP = n_bkg_selected3_MLP/n_bkg_original;
+
+std::cout << "Statistics of both cuts: ";
+std::cout << "--------------------------------------" << std::endl;
+    std::cout << "Signal Events (total): " << n_sig_original << std::endl;
+    std::cout << "Signal Events (selected): " << n_sig_selected3_MLP << std::endl;
+    std::cout << "Signal Efficiency: " << sig_eff3_MLP << std::endl;
+
+    std::cout << "Background Events (total): " << n_bkg_original << std::endl;
+    std::cout << "Background Events (selected): " << n_bkg_selected3_MLP << std::endl;
+    std::cout << "Background Efficiency: " << bkg_eff3_MLP << std::endl;
+    std::cout << "Expected number of signal events: " << round(sigtheory*sig_eff3_MLP) << std::endl;
+    std::cout << "--------------------------------------" << std::endl;
+>>>>>>> b46ce16085925950e804902cdec0342dd2f2ba7d
 }
